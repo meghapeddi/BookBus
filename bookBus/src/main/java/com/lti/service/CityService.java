@@ -1,4 +1,4 @@
-package com.lti.dao;
+package com.lti.service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
