@@ -32,6 +32,13 @@ p {
 	margin: 20px 0 30px;
 }
 
+label {
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0.5px;
+	font-weight: bold;
+}
+
 span {
 	font-size: 12px;
 }
@@ -44,13 +51,13 @@ a {
 }
 
 button {
-	border-radius: 20px;
+	border-radius: 10px;
 	border: 1px solid rgb(80, 120, 233);
 	background-color: rgb(80, 120, 233);
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
-	padding: 12px 45px;
+	padding: 8px 30px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
@@ -85,7 +92,7 @@ input {
 	border: none;
 	padding: 12px 15px;
 	margin: 8px 0;
-	width: 100%;
+	width: 90%;
 }
 
 .container {
@@ -97,7 +104,7 @@ input {
 	overflow: hidden;
 	width: 350px;
 	max-width: 100%;
-	min-height: 480px;
+	min-height: 492px;
 }
 
 .form-container {
@@ -145,3 +152,4 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+
