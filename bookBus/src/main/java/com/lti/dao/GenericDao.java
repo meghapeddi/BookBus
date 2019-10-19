@@ -14,6 +14,6 @@ public class GenericDao {
 	
 	@Transactional
 	public void save(Object object) {
-		entityManager.persist(object);
+		entityManager.merge(object);//update the existing user data or insert user data if not registered
 	}
 }
