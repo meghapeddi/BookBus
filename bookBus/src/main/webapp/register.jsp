@@ -10,23 +10,32 @@
 <body>
 	<div class="container" id="container">
 
-		<form action="#">
+		<form action="register.lti" method = "post">
 			<h2>Register</h2>
 
-			<input type="name" placeholder="First Name" /> <input type="name"
-				placeholder="Last Name" /> <input type="email" placeholder="Email" />
+			<input name="fname" placeholder="First Name" /> 
+			<input name="lname"placeholder="Last Name" /> 
+			<input type="email" name="email" placeholder="Email" />
 
-			<input type="password" placeholder="Password" /> <input
-				type="password" placeholder="Confirm Password" />
-
-			<div style="width: 100%; height: inherit;">
-				<div style="margin-left: 4px; width: 50%; float: left;">
-					<label>Date of Birth:</label>
-				</div>
-				<div style="width: 100%; display: inline-block;">
-					<input type="date" />
-				</div>
+			 <input name="password" type="password" placeholder="Password" /> 
+			<!-- <input type="password" placeholder="Confirm Password" /> --> 
+			
+			<input name="contactno" placeholder="contactno"/>
+			<div class="gender">
+			<div class = "male">
+			<label>male:</label>
+			<input type="radio" value="male" />
 			</div>
+			<div class = "female">
+			<label>female:</label>
+			<input type="radio" value="female" />
+			</div>
+			<div class ="other">
+			<label>other:</label>
+			<input type="radio" value="other" />
+			</div>
+			</div>
+			
 			<div style="width: 97%; margin-top: 6px; height: inherit;">
 				<div style="width: 50%; float: left;">
 					<button type="submit">Submit</button>

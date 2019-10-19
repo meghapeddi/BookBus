@@ -6,24 +6,25 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
 
+import com.lti.entity.User;
+
 @Repository
-public class GenericDao {
-	
+public class RegisterDao {
+
 	@PersistenceContext
 	private EntityManager entityManager;
-	
+
 	@Transactional
-	public int save(Object object) {
+	public int save(User user) {
 		int flag = 0;
-		if(object!= null){
-			flag =1 ;
-			entityManager.merge(object);
-		}
-		else {
-			flag=0;
+		if (user != null) {
+			flag = 1;
+			entityManager.persist(user);
+		} else {
+			flag = 0;
 			System.out.println("Don't register user");
 		}
 		return flag;
-		//update the existing user data or insert user data if not registered
+
 	}
 }

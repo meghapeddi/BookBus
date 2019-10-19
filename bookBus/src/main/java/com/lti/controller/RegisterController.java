@@ -25,14 +25,20 @@ public class RegisterController {
 		user.setLname(data.getLname());
 		user.setEmail(data.getEmail());
 		user.setPassword(data.getPassword());
-		user.setContact(data.getContactNo());
-		user.setDob(data.getDob());
+		user.setContactno(data.getContactNo());
 		user.setGender(data.getGender());
-		user.setType(data.getType());
-
+		//user.setType(data.getType());
 		
 		int flag = registerService.register(user);
-		return "confirmation.jsp";
+		
+		if(flag ==1){
+			model.put("message", "registered");
+			return "confirmation.jsp";
+		}
+		else{
+			model.put("message", "unregistered");
+			return "error.jsp";
+		}
 		
 	}
 

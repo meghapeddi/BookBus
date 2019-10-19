@@ -10,25 +10,18 @@
         https://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- Loading annotated classes/beans -->
-	<context:component-scan base-package="com.lti" />
+	<context:component-scan base-package="com.lti.dao,com.lti.controller,com.lti.service" />
 
 
 	<!-- DataSource configuration -->
 	<bean id="oracleDS" class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-		<property name="username" value="sys as sysdba" />
-		<property name="password" value="Newuser123" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.100.240:1521:XE" />
+		<property name="username" value="bus_admin" />
+		<property name="password" value="password" />
 	</bean>
 
-	<bean id="mysqlDS" class="org.apache.commons.dbcp2.BasicDataSource"
-		destroy-method="close">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
-		<property name="username" value="sys as sysdba" />
-		<property name="password" value="Newuser123" />
-	</bean>
 
 	<!-- ========== Spring ORM/JPA Configuration =========== -->
 	<!-- This bean will create the EntityManagerFactory object
@@ -45,7 +38,6 @@
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.hbm2ddl.auto">update</prop>
 			</props>
 		</property>
 	</bean>

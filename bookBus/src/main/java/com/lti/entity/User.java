@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @Table(name = "tbl_user")
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "city_auto_incr")
-	@SequenceGenerator(name = "city_auto_incr", sequenceName = "city_auto_incr", allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "USER_AUTO_INCR")
+	@SequenceGenerator(name = "USER_AUTO_INCR", sequenceName = "USER_AUTO_INCR", allocationSize = 1)
 	@Column(name = "userid")
 	private int userId;
 	@Column(name = "fname")
@@ -26,10 +26,16 @@ public class User {
 	private String email;
 	@Column(name = "password")
 	private String password;
-	@Column(name = "contact")
-	private int contact;
-	@Column(name = "dob")
-	private LocalDate dob;
+	@Column(name = "contactno")
+	private int contactno;
+	public int getContactno() {
+		return contactno;
+	}
+
+	public void setContactno(int contactno) {
+		this.contactno = contactno;
+	}
+
 	@Column(name = "gender")
 	private Gender gender;
 	@Column(name = "type")
@@ -81,22 +87,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public int getContact() {
-		return contact;
-	}
-
-	public void setContact(int contact) {
-		this.contact = contact;
-	}
-
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
 	}
 
 	public Gender getGender() {

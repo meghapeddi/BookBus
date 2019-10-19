@@ -90,6 +90,12 @@
 			<version>1.4</version>
 		</dependency>
 
+<!-- https://mvnrepository.com/artifact/com.sun.istack/istack-commons-runtime -->
+<dependency>
+    <groupId>com.sun.istack</groupId>
+    <artifactId>istack-commons-runtime</artifactId>
+    <version>3.0.7</version>
+</dependency>
 
 	</dependencies>
 </project>
