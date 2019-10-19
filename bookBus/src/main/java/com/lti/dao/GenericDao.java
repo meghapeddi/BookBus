@@ -13,7 +13,17 @@ public class GenericDao {
 	private EntityManager entityManager;
 	
 	@Transactional
-	public void save(Object object) {
-		entityManager.merge(object);//update the existing user data or insert user data if not registered
+	public int save(Object object) {
+		int flag = 0;
+		if(object!= null){
+			flag =1 ;
+			entityManager.merge(object);
+		}
+		else {
+			flag=0;
+			System.out.println("Don't register user");
+		}
+		return flag;
+		//update the existing user data or insert user data if not registered
 	}
 }

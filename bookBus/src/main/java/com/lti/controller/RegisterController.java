@@ -18,7 +18,7 @@ public class RegisterController {
 	private RegisterService registerService;
 
 	@RequestMapping(path = "/register.lti", method = RequestMethod.POST)
-	public void register(UserDTO data, Map model) {
+	public String register(UserDTO data, Map model) {
 
 		User user = new User();
 		user.setFname(data.getFname());
@@ -30,7 +30,14 @@ public class RegisterController {
 		user.setGender(data.getGender());
 		user.setType(data.getType());
 
-		registerService.register(user);
+		
+		int flag = registerService.register(user);
+		if(flag ==0){
+			return "error.jsp";
+		}
+		else{
+			return "confirmation.jsp";
+		}
 		
 	}
 
