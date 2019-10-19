@@ -32,12 +32,7 @@ public class RegisterController {
 
 		
 		int flag = registerService.register(user);
-		if(flag == 1){
-			return "confirmation.jsp";
-		}
-		else{
-			return "error.jsp";
-		}
+		return "confirmation.jsp";
 		
 	}
 

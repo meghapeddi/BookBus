@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Error while registering user</h1>
+<h1>Error while regsitering the user</h1>
 </body>
 </html>
