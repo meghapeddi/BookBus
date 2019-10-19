@@ -24,15 +24,15 @@
 			<div class="gender">
 			<div class = "male">
 			<label>male:</label>
-			<input type="radio" value="male" />
+			<input type="radio" value="male" name="gender"/>
 			</div>
 			<div class = "female">
 			<label>female:</label>
-			<input type="radio" value="female" />
+			<input type="radio" value="female" name="gender"/>
 			</div>
 			<div class ="other">
 			<label>other:</label>
-			<input type="radio" value="other" />
+			<input type="radio" value="other" name="gender"/>
 			</div>
 			</div>
 			
@@ -46,9 +46,7 @@
 			</div>
 		</form>
 	</div>
-
 	</div>
-
 	<footer>
 	<p>Footer</p>
 	</footer>

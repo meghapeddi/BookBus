@@ -2,17 +2,30 @@ package com.lti.dto;
 
 import java.time.LocalDate;
 
-import com.lti.entity.Gender;
-
 public class UserDTO {
 
 	private String fname;
 	private String lname;
 	private String email;
 	private String password;
-	private int contactno;
-	private Gender gender;
-	
+	private String contactno;
+	private String gender;
+
+	public String getGender() {
+		return gender;
+	}
+
+	public String getContactno() {
+		return contactno;
+	}
+
+	public void setContactno(String contactno) {
+		this.contactno = contactno;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 
 	public String getFname() {
 		return fname;
@@ -46,21 +59,4 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	public int getContactNo() {
-		return contactno;
-	}
-
-	public void setContactNo(int contactNo) {
-		contactno = contactno;
-	}
-
-	public Gender getGender() {
-		return gender;
-	}
-
-	public void setGender(Gender gender) {
-		this.gender = gender;
-	}
-
-	
 }

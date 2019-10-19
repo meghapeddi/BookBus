@@ -25,7 +25,7 @@ public class RegisterController {
 		user.setLname(data.getLname());
 		user.setEmail(data.getEmail());
 		user.setPassword(data.getPassword());
-		user.setContactno(data.getContactNo());
+		user.setContactno(data.getContactno());
 		user.setGender(data.getGender());
 		//user.setType(data.getType());
 		

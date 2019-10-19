@@ -27,17 +27,26 @@ public class User {
 	@Column(name = "password")
 	private String password;
 	@Column(name = "contactno")
-	private int contactno;
-	public int getContactno() {
+	private String contactno;
+	@Column(name = "gender")
+	private String gender;
+
+	public String getContactno() {
 		return contactno;
 	}
 
-	public void setContactno(int contactno) {
-		this.contactno = contactno;
+	public void setContactno(String string) {
+		this.contactno = string;
 	}
 
-	@Column(name = "gender")
-	private Gender gender;
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
 	@Column(name = "type")
 	private String type;
 
@@ -87,14 +96,6 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}
-
-	public Gender getGender() {
-		return gender;
-	}
-
-	public void setGender(Gender gender) {
-		this.gender = gender;
 	}
 
 }
