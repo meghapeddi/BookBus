@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link rel="stylesheet" type="text/css" media="screen" href="admin.css" />
-<script src="admin.js"></script>
+<script src="addBuses.js"></script>
 <title>Admin</title>
 </head>
 <body>
