@@ -19,7 +19,7 @@ public class RegisterDao {
 		int flag = 0;
 		if (user != null) {
 			flag = 1;
-			entityManager.merge(user);
+			entityManager.persist(user);
 		} else {
 			flag = 0;
 			System.out.println("Don't register user");

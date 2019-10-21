@@ -10,7 +10,7 @@
 <body>
 	<div class="container">
 		<form action="addStops.lti" method = "post">
-			<h2>Admin</h2>
+			<h2>Add stops</h2>
 			<input type="text" name = "city" placeholder="city" /> 
 			<input type="text" name = "stopName" placeholder="stopname" />
 			<button type = "submit">Add</button>
