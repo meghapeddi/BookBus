@@ -7,9 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.lti.dto.BusDTO;
 import com.lti.dto.UserDTO;
 import com.lti.entity.BusDetails;
+import com.lti.entity.Fare;
 import com.lti.entity.User;
+import com.lti.interfaces.BusInterface;
 import com.lti.service.BusService;
 
 
@@ -17,11 +20,19 @@ import com.lti.service.BusService;
 public class BusController {
 	
 	@Autowired
-	private BusService busService;
+	private BusInterface busInterface;
 
 	@RequestMapping(path = "/addbuses.lti", method = RequestMethod.POST)
-	public String register(BusDetails data, Map model) {
+	public String register(BusDTO data, Map model) {
 
+		/*
+		 * BusDetails bus = new BusDetails(); bus.setBusNo(data.getBusNo());
+		 * bus.setBusName(data.getBusName()); bus.setSrc(data.getSrc());
+		 * bus.setDestination(data.getDestination()); bus.setSlotNo(data.getSlotNo());
+		 * bus.setType(data.getType()); bus.setNoOfSeats(20);
+		 * //user.setType(data.getType());
+		 */		
+		
 		BusDetails bus = new BusDetails();
 		bus.setBusNo(data.getBusNo());
 		bus.setBusName(data.getBusName());
@@ -30,11 +41,15 @@ public class BusController {
 		bus.setSlotNo(data.getSlotNo());
 		bus.setType(data.getType());
 		bus.setNoOfSeats(20);
-		//user.setType(data.getType());
 		
-		 busService.addBuses(bus);
-		 model.put("buses","Buses added");
-		 return "success.jsp";
+		Fare fare = new Fare();
+		fare.setFare(data.getFare());
+		fare.setBusDetails(bus);
+	
+		bus.setFare(fare);
+		busInterface.addBuses(bus);
+		model.put("buses","Buses added");
+		return "success.jsp";
 		
 		/*if(flag ==1){
 			model.put("message", "busesAdded");

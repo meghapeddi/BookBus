@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.lti.entity.User;
@@ -11,6 +12,9 @@ import com.lti.entity.User;
 @Repository
 public class RegisterDao {
 
+	@Autowired
+	 private GenericDao genericDao;
+	
 	@PersistenceContext
 	private EntityManager entityManager;
 
@@ -19,7 +23,7 @@ public class RegisterDao {
 		int flag = 0;
 		if (user != null) {
 			flag = 1;
-			entityManager.persist(user);
+			genericDao.save(user);
 		} else {
 			flag = 0;
 			System.out.println("Don't register user");

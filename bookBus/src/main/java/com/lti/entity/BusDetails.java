@@ -26,19 +26,22 @@ public class BusDetails {
 	@Column(name = "destination")
 	private String destination;
 	@Column(name = "slotno")
-	private int slotNo;
+	private String slotNo;
 	@Column(name = "type")
 	private String type;
 	@Column(name = "noofseats")
 	private int noOfSeats;
 
-	/*
-	 * @OneToOne(mappedBy = "bus", cascade = CascadeType.ALL) private Fare fare;
-	 * 
-	 * public Fare getFare() { return fare; }
-	 * 
-	 * public void setFare(Fare fare) { this.fare = fare; }
-	 */
+	@OneToOne(mappedBy="busDetails",cascade = CascadeType.ALL)
+	private Fare fare;
+
+	public Fare getFare() {
+		return fare;
+	}
+
+	public void setFare(Fare fare) {
+		this.fare = fare;
+	}
 
 	public String getBusNo() {
 		return busNo;
@@ -72,14 +75,6 @@ public class BusDetails {
 		this.destination = destination;
 	}
 
-	public int getSlotNo() {
-		return slotNo;
-	}
-
-	public void setSlotNo(int slotNo) {
-		this.slotNo = slotNo;
-	}
-
 	public String getType() {
 		return type;
 	}
@@ -94,6 +89,14 @@ public class BusDetails {
 
 	public void setNoOfSeats(int noOfSeats) {
 		this.noOfSeats = noOfSeats;
+	}
+
+	public String getSlotNo() {
+		return slotNo;
+	}
+
+	public void setSlotNo(String slotNo) {
+		this.slotNo = slotNo;
 	}
 
 }

@@ -9,13 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lti.dto.UserDTO;
 import com.lti.entity.User;
+import com.lti.interfaces.UserInterface;
 import com.lti.service.RegisterService;
 
 @Controller
 public class RegisterController {
 
 	@Autowired
-	private RegisterService registerService;
+	private UserInterface userInterface;
 
 	@RequestMapping(path = "/register.lti", method = RequestMethod.POST)
 	public String register(UserDTO data, Map model) {
@@ -29,9 +30,9 @@ public class RegisterController {
 		user.setGender(data.getGender());
 		//user.setType(data.getType());
 		
-		int flag = registerService.register(user);
+		int flag = userInterface.register(user);
 		
-		if(flag ==1){
+		if(flag==1){
 			model.put("message", "registered");
 			return "confirmation.jsp";
 		}

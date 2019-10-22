@@ -1,7 +1,5 @@
 package com.lti.dto;
 
-import java.time.LocalDate;
-
 public class UserDTO {
 
 	private String fname;
