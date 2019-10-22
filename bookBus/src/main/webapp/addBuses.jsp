@@ -29,41 +29,40 @@
 		<h3>Administrator</h3>
 		<h4>Update Details</h4>
 
-		<form name="adminForm" action="submit"
-			onsubmit="return validateBusNo() && validateBusTime()">
-			<input type="text" placeholder="Enter Bus number" name="busno">
+		<form name="adminForm" action="addbuses.lti"
+			onsubmit="return validateBusNo() && validateBusTime()" method="post">
+			<input type="text" placeholder="Enter Bus number" name="busNo">
 			<br> <input type="text" placeholder="Enter Bus name"
-				name="busname" required> <br> <label>Source:</label> <select
+				name="busName" required> <br> <label>Source:</label> <select
 				style="width: 48%;">
-				<option value="Mumbai">Mumbai</option>
-				<option value="Pune">Pune</option>
-				<option value="Goa">Goa</option>
-				<option value="Bangalore">Bangalore</option>
+				<option value="Mumbai" name="src">Mumbai</option>
+				<option value="Pune" name="src">Pune</option>
+				<option value="Goa" name="src">Goa</option>
+				<option value="Bangalore" name="src">Bangalore</option>
 			</select> <br> <label>Destination:</label> <select style="width: 40%;">
-				<option value="Pune">Pune</option>
-				<option value="Goa">Goa</option>
-				<option value="Bangalore">Bangalore</option>
-				<option value="Mumbai">Mumbai</option>
+				<option value="Pune" name="destination">Pune</option>
+				<option value="Goa" name="destination">Goa</option>
+				<option value="Bangalore" name="destination">Bangalore</option>
+				<option value="Mumbai" name="destination">Mumbai</option>
 			</select> <br> <input type="text" placeholder="Enter Slot number"
 				name="slotnumber"> <br> <label>Type:</label> <select>
-				<option value="AC">AC</option>
-				<option value="NON AC">NON-AC</option>
+				<option value="AC" name="type">AC</option>
+				<option value="NON AC" name="type">NON-AC</option>
 				<br>
-				<input type="text" placeholder="Departure time" name="depttime">
+				<!-- <input type="text" placeholder="Departure time" name="depttime">
 				<input type="text" placeholder="Arrival time" name="arrivaltime">
 				<br>
 				<label>Day:</label>
 				<select>
-					<option value="Sunday">Sunday</option>
+					<option value="Sunday" >Sunday</option>
 					<option value="Monday">Monday</option>
 					<option value="Tuesday">Tuesday</option>
 					<option value="Wednessday">Wednessday</option>
 					<option value="Thursday">Thursday</option>
 					<option value="Friday">Friday</option>
-					<option value="Saturday">Saturday</option>
-			</select>
-				<br>
-				<button type="submit">Add Bus</button>
+					<option value="Saturday">Saturday</option>-->
+			</select> <br>
+			<button type="submit">Add Bus</button>
 		</form>
 	</div>
 

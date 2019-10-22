@@ -1,11 +1,15 @@
 package com.lti.entity;
 
 import java.time.LocalTime;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -13,9 +17,8 @@ import javax.persistence.Table;
 public class Slot {
 
 	@Id
-	@GeneratedValue
-	private int id;
-
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SLOT_AUTO_INCR")
+	@SequenceGenerator(name = "SLOT_AUTO_INCR", sequenceName = "SLOT_AUTO_INCR", allocationSize = 1)
 	@Column(name = "slotno")
 	private String slotNo;
 	@Column(name = "departuretime")
@@ -26,14 +29,6 @@ public class Slot {
 	private LocalTime travelTime;
 	@Column(name = "day")
 	private String day;
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getSlotNo() {
 		return slotNo;

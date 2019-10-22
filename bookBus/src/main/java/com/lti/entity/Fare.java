@@ -12,9 +12,10 @@ public class Fare {
 	private int id;
 	private int fare;
 	
+	/*
 	@OneToOne
 	@JoinColumn(name ="busno")
-	private BusDetails bus;
+	private BusDetails bus;*/
 
 	public int getFare() {
 		return fare;
