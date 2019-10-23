@@ -22,21 +22,20 @@ h1 {
 
 h2 {
 	text-align: center;
+	margin: none;
+	font-weight: normal;
 }
 
-p {
+p {	
+	float: left;
 	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
 }
 
 label {
-	font-size: 14px;
+	font-size: 12px;
 	line-height: 20px;
 	letter-spacing: 0.5px;
-	font-weight: bold;
+	font-weight: normal;
 }
 
 span {
@@ -52,8 +51,8 @@ a {
 
 button {
 	border-radius: 10px;
-	border: 1px solid rgb(80, 120, 233);
-	background-color: rgb(80, 120, 233);
+	border: 1px solid rgb(36, 146, 197);
+	background-color: rgb(36, 146, 197);
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -88,11 +87,17 @@ form {
 }
 
 input {
-	background-color: #eee;
-	border: none;
+	background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #d1cece;
 	padding: 12px 15px;
 	margin: 8px 0;
-	width: 90%;
+    width: 90%;
+    display: inline-block;
+}
+
+input:focus{
+    outline: none;
 }
 
 .container {
@@ -104,7 +109,7 @@ input {
 	overflow: hidden;
 	width: 350px;
 	max-width: 100%;
-	min-height: 480px;
+	min-height: 520px;
 }
 
 .form-container {
@@ -127,9 +132,23 @@ input {
 }
 
 .gender{
-	 
+	width: inherit;
+	margin: 0 auto;
 }
 
+.male{
+	
+	display: inline-block;
+}
+
+.female{
+
+	display: inline-block;
+}
+
+.other{
+	display: inline-block;
+}
 footer {
     background-color: #222;
     color: #fff;

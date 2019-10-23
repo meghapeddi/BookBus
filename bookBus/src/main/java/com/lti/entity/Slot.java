@@ -1,14 +1,14 @@
 package com.lti.entity;
 
 import java.time.LocalTime;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -29,6 +29,18 @@ public class Slot {
 	private LocalTime travelTime;
 	@Column(name = "day")
 	private String day;
+
+	@ManyToOne
+	@JoinColumn(name = "busno")
+	private BusDetails busDetails;
+	
+	public BusDetails getBusDetails() {
+		return busDetails;
+	}
+
+	public void setBusDetails(BusDetails busDetails) {
+		this.busDetails = busDetails;
+	}
 
 	public String getSlotNo() {
 		return slotNo;

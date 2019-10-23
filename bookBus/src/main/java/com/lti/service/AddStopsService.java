@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.lti.dao.AddStopsDao;
 import com.lti.entity.Stops;
-import com.lti.entity.User;
 import com.lti.interfaces.StopInterface;
 
 @Service

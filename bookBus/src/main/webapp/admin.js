@@ -9,8 +9,10 @@ function validateBusNo()
   }
   else{
     alert("Invalid Bus Number")
+    return false;
   }
 }
+
 
 function validateBusTime() 
 {
@@ -24,5 +26,6 @@ function validateBusTime()
   }
   else{
     alert("Invalid Bus Timings")
+    return false;
   }
 }

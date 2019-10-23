@@ -4,41 +4,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+<link rel="stylesheet" type="text/css" media="screen"
+	href="register.css" />
+<script src="register.js"></script>
 <title>Register</title>
 </head>
 <body>
 	<div class="container" id="container">
 
-		<form action="register.lti" method = "post">
+		<form name="registerForm" action="register.lti" method="post" onsubmit="return registerValidate()">
 			<h2>Register</h2>
 
-			<input name="fname" placeholder="First Name" /> 
-			<input name="lname"placeholder="Last Name" /> 
-			<input type="email" name="email" placeholder="Email" />
-
-			 <input name="password" type="password" placeholder="Password" /> 
-			<!-- <input type="password" placeholder="Confirm Password" /> --> 
-			
-			<input name="contactno" placeholder="contactno"/>
+			<input name="fname" placeholder="First Name" required /> <input
+				name="lname" placeholder="Last Name" required /> <input
+				type="email" name="email" placeholder="Email" required /> <input
+				name="password" type="password" placeholder="Password" id="password"required /> <input
+				name="confirmpassword" type="password" placeholder="Confirm Password" id="confirmpassword"
+				required /> <input name="contactno" placeholder="ContactNo"
+				required />
 			<div class="gender">
-			<div class = "male">
-			<label>male:</label>
-			<input type="radio" value="male" name="gender"/>
+				<div class="male">
+					<input type="radio" value="male" name="gender" required /> <label>male</label>
+				</div>
+
+				<div class="female">
+					<input type="radio" value="female" name="gender" required /> <label>female</label>
+				</div>
+
+				<div class="other">
+					<input type="radio" value="other" name="gender" required /> <label>other</label>
+				</div>
 			</div>
-			<div class = "female">
-			<label>female:</label>
-			<input type="radio" value="female" name="gender"/>
-			</div>
-			<div class ="other">
-			<label>other:</label>
-			<input type="radio" value="other" name="gender"/>
-			</div>
-			</div>
-			
+
 			<div style="width: 97%; margin-top: 6px; height: inherit;">
 				<div style="width: 50%; float: left;">
-					<button type="submit">Submit</button>
+					<button type="submit" onclick="return passwordValidate()">Submit</button>
 				</div>
 				<div>
 					<button type="button">Cancel</button>

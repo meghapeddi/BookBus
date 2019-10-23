@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lti.entity.Stops;
-import com.lti.entity.User;
 import com.lti.service.AddStopsService;
 
 @Controller

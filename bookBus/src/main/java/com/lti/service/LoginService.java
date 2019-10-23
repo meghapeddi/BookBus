@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.lti.dao.LoginDao;
 import com.lti.entity.User;
+import com.lti.interfaces.UserInterface;
 
 @Service
 public class LoginService {
@@ -26,4 +27,5 @@ public class LoginService {
 		return flag;
 
 	}
+
 }
