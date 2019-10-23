@@ -18,7 +18,7 @@
 			<img src="contact.png" style="width: 90%;" " alt="CONTACT">
 		</div>
 		<div class="heading">
-			<h1>bookBUS</h1>
+			<h1>bookBUS</h1> 
 		</div>
 	</div>
 
@@ -35,24 +35,24 @@
 			 <input type="text" placeholder="Enter Bus name" name="busName" required><br> 
 			 <label>Source:</label>
 			 <select
-				style="width: 48%;">
-				<option value="Mumbai" name="src">Mumbai</option>
-				<option value="Pune" name="src">Pune</option>
-				<option value="Goa" name="src">Goa</option>
-				<option value="Bangalore" name="src">Bangalore</option>
+				style="width: 48%;" name="src">
+				<option value="Mumbai" >Mumbai</option>
+				<option value="Pune">Pune</option>
+				<option value="Goa">Goa</option>
+				<option value="Bangalore" >Bangalore</option>
 			</select><br>
 		    <label>Destination:</label>
-		    <select style="width: 40%;">
-				<option value="Pune" name="destination">Pune</option>
-				<option value="Goa" name="destination">Goa</option>
-				<option value="Bangalore" name="destination">Bangalore</option>
-				<option value="Mumbai" name="destination">Mumbai</option>
+		    <select style="width: 40%;" name="destination">
+				<option value="Pune" >Pune</option>
+				<option value="Goa" >Goa</option>
+				<option value="Bangalore" >Bangalore</option>
+				<option value="Mumbai" >Mumbai</option>
 			</select><br>
 		    <input type="text" placeholder="Enter Slot number" name="slotNo"><br> 
 		    <label>Type:</label>
-		    <select>
-				<option value="AC" name="type">AC</option>
-				<option value="NON AC" name="type">NON-AC</option>
+		    <select name="type">
+				<option value="AC" >AC</option>
+				<option value="NON AC">NON-AC</option>
 				<br>
 				<!-- <input type="text" placeholder="Departure time" name="depttime">
 				<input type="text" placeholder="Arrival time" name="arrivaltime">

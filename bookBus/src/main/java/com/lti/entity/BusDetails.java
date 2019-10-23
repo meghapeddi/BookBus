@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ManyToAny;
 
 @Entity
-@Table(name = "tbl_Bus")
+@Table(name = "tbl_BusDetails")
 public class BusDetails {
 
 	@Id
@@ -31,15 +31,14 @@ public class BusDetails {
 	private String type;
 	@Column(name = "noofseats")
 	private int noOfSeats;
+	@Column(name ="fare")
+	private int fare;
 
-	@OneToOne(mappedBy="busDetails",cascade = CascadeType.ALL)
-	private Fare fare;
-
-	public Fare getFare() {
+	public int getFare() {
 		return fare;
 	}
 
-	public void setFare(Fare fare) {
+	public void setFare(int fare) {
 		this.fare = fare;
 	}
 
