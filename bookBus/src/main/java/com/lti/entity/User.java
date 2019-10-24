@@ -33,10 +33,10 @@ public class User {
 	@Column(name = "gender")
 	private String gender;
 	
-	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
 	private Set<PassengerDetails> passengerDetails;
 	
-	@OneToMany(mappedBy="booking", fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
 	private Set<Booking> booking;
 
 	public String getContactno() {

@@ -2,9 +2,12 @@ package com.lti.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -12,6 +15,8 @@ import javax.persistence.Table;
 public class SeatsAvailable {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEAT_AUTO_INCR")
+	@SequenceGenerator(name = "SEAT_AUTO_INCR", sequenceName = "SEAT_AUTO_INCR", allocationSize = 1)
 	@Column(name = "seatid")
 	private int seatId;
 	@Column(name = "dailydate")

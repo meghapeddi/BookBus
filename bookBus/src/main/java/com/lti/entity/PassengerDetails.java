@@ -30,7 +30,7 @@ public class PassengerDetails {
 	private User user;
 	
 	@ManyToOne
-	@JoinColumn(name = "transactionid")
+	@JoinColumn(name="transactionid")
 	private Booking booking;
 	
 	public int getPassengerId() {

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.lti.dao.SearchDao;
 import com.lti.entity.BusDetails;
+import com.lti.entity.Stops;
 
 @Service
 public class SearchService {
@@ -20,4 +21,16 @@ public class SearchService {
 		List<BusDetails> list=searchDao.getBusDetails(src, destination);
 		return list;
 	}
+	
+	public List<Stops> searchBoardingStops(String src){
+		List<Stops> stops = searchDao.getBoardingStops(src);
+		return stops;	
+	}
+	
+	public List<Stops> searchDroppingStops(String destination){
+		List<Stops> stops = searchDao.getDroppingStops(destination);
+		return stops;	
+	}
+	
+	//public List<BusDetails> fetchStops
 }

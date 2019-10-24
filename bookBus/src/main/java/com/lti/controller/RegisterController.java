@@ -34,7 +34,7 @@ public class RegisterController {
 		
 		if(flag==1){
 			model.put("message", "registered");
-			return "success.jsp";
+			return "login.jsp";
 		}
 		else{
 			model.put("message", "unregistered");

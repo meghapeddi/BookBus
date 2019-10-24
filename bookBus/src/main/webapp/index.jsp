@@ -27,9 +27,11 @@
 			</div>
 		</div>
 
-
+		<div class="username">
+			<span>Hello ${user.fname}</span>
+		</div>
 		<div id="searchForm">
-			<form action="search.lti" style="padding: 37px;" method = "post">
+			<form action="search.lti" style="padding: 37px;" method="post">
 				<div class="fields">
 					<label>From</label> <select class="box" name="src">
 						<option value="" disabled="disabled">Choose an option</option>
@@ -51,7 +53,7 @@
 				<div class="fields">
 					<label>Date of Journey</label> <input type="date" class="date"
 						name="date" />
-					
+
 				</div>
 				<div class="fields">
 					<button type="submit">Search</button>
