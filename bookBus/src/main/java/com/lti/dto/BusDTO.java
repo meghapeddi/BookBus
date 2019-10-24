@@ -6,6 +6,8 @@ public class BusDTO {
 	private String busName;
 	private String src;
 	private String destination;
+	private String departureTime;
+	private String arrivalTime;
 	private String slotNo;
 	private String type;
 	private int fare;
@@ -64,5 +66,21 @@ public class BusDTO {
 
 	public void setFare(int fare) {
 		this.fare = fare;
+	}
+	
+	public String getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(String departureTime) {
+		this.departureTime = departureTime;
+	}
+
+	public String getArrivalTime() {
+		return arrivalTime;
+	}
+
+	public void setArrivalTime(String arrivalTime) {
+		this.arrivalTime = arrivalTime;
 	}
 }

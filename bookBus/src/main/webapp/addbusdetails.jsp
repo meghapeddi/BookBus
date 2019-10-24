@@ -61,25 +61,26 @@
 		<h3>Administrator</h3>
 		<h4>Add Bus Details</h4>
 
-		<form name="adminForm" action="submit"
+		<form name="adminForm" action="addbuses.lti" method="post"
 			onsubmit="return validateBusNo()">
 			<input type="text" placeholder="Enter Bus number" name="busno">
 			<br> <input type="text" placeholder="Enter Bus name"
 				name="busname" required> <br> <label>Source:</label> <select
-				style="width: 23.5%;">
+				name="src" style="width: 23.5%;">
 				<option value="Mumbai">Mumbai</option>
 				<option value="Pune">Pune</option>
 				<option value="Goa">Goa</option>
 				<option value="Bangalore">Bangalore</option>
-			</select> <br> <label>Destination:</label> <select style="width: 20%;">
+			</select> <br> <label>Destination:</label> <select name="destination"
+				style="width: 20%;">
 				<option value="Pune">Pune</option>
 				<option value="Goa">Goa</option>
 				<option value="Bangalore">Bangalore</option>
 				<option value="Mumbai">Mumbai</option>
-			</select> <br> <label>Slot:</label> <select>
+			</select> <br> <label>Slot:</label> <select name="slotno">
 				<option value="SM1">SM1</option>
 				<option value="SM2">SM2</option>
-			</select> <br> <label>Type:</label> <select>
+			</select> <br> <label>Type:</label> <select name="type">
 				<option value="AC">AC</option>
 				<option value="NON AC">NON-AC</option>
 			</select> <br>

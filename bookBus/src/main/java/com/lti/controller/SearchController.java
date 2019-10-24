@@ -23,9 +23,9 @@ public class SearchController {
 	@RequestMapping(path="/search.lti", method=RequestMethod.POST)
 	public String search(@RequestParam("src") String src, @RequestParam("destination")String destination, @RequestParam("date")String dateOfJourney, Map model) {
 		LocalDate date = LocalDate.parse(dateOfJourney);
-		DayOfWeek day= date.getDayOfWeek();
-		System.out.println(day);
-		searchService.search(src, destination, day);
+		//DayOfWeek day= date.getDayOfWeek();
+		//System.out.println(day);
+		searchService.search(src, destination);
 		model.put("data", "obj");
 		return "search.jsp";
 	}

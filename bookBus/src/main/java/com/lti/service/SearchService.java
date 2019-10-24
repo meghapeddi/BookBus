@@ -16,8 +16,8 @@ public class SearchService {
 	@Autowired
 	SearchDao searchDao;
 	
-	public List<BusDetails> search(String src, String destination, DayOfWeek day) {
-		List<BusDetails> list=searchDao.getBusDetails(src, destination, day);
+	public List<BusDetails> search(String src, String destination) {
+		List<BusDetails> list=searchDao.getBusDetails(src, destination);
 		return list;
 	}
 }

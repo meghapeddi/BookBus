@@ -22,12 +22,11 @@ public class SearchDao {
 	private EntityManager entityManager;
 	
 	@Transactional
-	public List<BusDetails> getBusDetails(String src, String destination, DayOfWeek day) {
-		String sql = "";
+	public List<BusDetails> getBusDetails(String src, String destination) {
+		String sql = "select b from BusDetails b where b.src=:src and b.destination=:des";
 		Query query = entityManager.createQuery(sql);
 		query.setParameter("src", src);
-		query.setParameter("destination", destination);
-		query.setParameter("day", day);
+		query.setParameter("des", destination);
 		return query.getResultList();
 	}
 }

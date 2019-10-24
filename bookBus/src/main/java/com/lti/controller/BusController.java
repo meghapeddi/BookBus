@@ -30,9 +30,10 @@ public class BusController {
 		bus.setBusName(data.getBusName());
 		bus.setSrc(data.getSrc());
 		bus.setDestination(data.getDestination());
+		bus.setDepartureTime(data.getDepartureTime());
+		bus.setArrivalTime(data.getArrivalTime());
 		//bus.setSlotNo(data.getSlotNo());
 		bus.setType(data.getType());
-		bus.setNoOfSeats(20); // user.setType(data.getType());
 		bus.setFare(data.getFare());
 		
 
