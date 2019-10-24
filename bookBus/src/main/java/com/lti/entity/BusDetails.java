@@ -1,8 +1,12 @@
 package com.lti.entity;
 
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -35,6 +39,12 @@ public class BusDetails {
 	private String travelTime;
 	@Column(name="fare")
 	private int fare;
+	
+	@OneToMany(mappedBy="busDetails", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private Set<Booking> booking;
+	
+	@OneToMany(mappedBy="busDetails", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private Set<SeatsAvailable> seatsAvailable;
 	
 	/*
 	 * @OneToOne(mappedBy = "bus", cascade = CascadeType.ALL) private Fare fare;

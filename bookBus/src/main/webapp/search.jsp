@@ -1,4 +1,4 @@
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix = "c" uri ="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="java.util.List" %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -17,9 +17,7 @@
 				<th>Bus name</th>
 				<th>Source</th>
 				<th>Destination</th>
-				<th>Slot no</th>
 				<th>Type</th>
-				<th>No of seats</th>
 				<th>Fare</th>
 				<th>Arrival Time</th>
 				<th>Departure Time</th>
@@ -27,19 +25,17 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="data" items="${obj}">
+			<c:forEach var="data" items="${bus}">
 				<tr>
 					<td>${data.busNo}</td>
-					<td>${data.busName}</td>
+				    <td>${data.busName}</td>
 					<td>${data.src}</td>
 					<td>${data.destination}</td>
-					<td>${data.slotNo}</td>
 					<td>${data.type}</td>
-					<td>${data.noOfSeats}</td>
 					<td>${data.fare}</td>
 					<td>${data.departureTime}</td>
 					<td>${data.arrivalTime}</td>
-					<td>${data.travelTime}</td>
+					<td>${data.travelTime}</td> 
 				</tr>
 			</c:forEach>
 		</tbody>

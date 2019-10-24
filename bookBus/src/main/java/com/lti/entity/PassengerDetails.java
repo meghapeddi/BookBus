@@ -3,6 +3,8 @@ package com.lti.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +24,14 @@ public class PassengerDetails {
 	private int age;
 	@Column(name = "seatno")
 	private int seatNo;
+	
+	@ManyToOne
+	@JoinColumn(name = "userid")
+	private User user;
+	
+	@ManyToOne
+	@JoinColumn(name = "transactionid")
+	private Booking booking;
 	
 	public int getPassengerId() {
 		return passengerId;

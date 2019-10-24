@@ -3,6 +3,8 @@ package com.lti.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,8 +18,16 @@ public class Booking {
 	private int noOfSeats;
 	@Column(name = "dateofjourney")
 	private String dateOfJourney;
-	@Column(name = "fare")
-	private int fare;
+	@Column(name = "totalfare")
+	private int totalFare;
+	
+	@ManyToOne
+	@JoinColumn(name = "busno")
+	private BusDetails busDetails;
+	
+	@ManyToOne
+	@JoinColumn(name = "userid")
+	private User user;
 	
 	public int getTransactionId() {
 		return transactionId;
@@ -38,10 +48,10 @@ public class Booking {
 		this.dateOfJourney = dateOfJourney;
 	}
 	public int getFare() {
-		return fare;
+		return totalFare;
 	}
 	public void setFare(int fare) {
-		this.fare = fare;
+		this.totalFare = fare;
 	}
 
 }

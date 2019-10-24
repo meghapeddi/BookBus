@@ -8,11 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lti.dto.BusDTO;
-import com.lti.dto.UserDTO;
 import com.lti.entity.BusDetails;
-import com.lti.entity.User;
 import com.lti.interfaces.BusInterface;
-import com.lti.service.BusService;
 
 @Controller
 public class BusController {

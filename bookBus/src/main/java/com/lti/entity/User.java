@@ -1,12 +1,14 @@
 package com.lti.entity;
 
-import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -30,6 +32,12 @@ public class User {
 	private String contactno;
 	@Column(name = "gender")
 	private String gender;
+	
+	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
+	private Set<PassengerDetails> passengerDetails;
+	
+	@OneToMany(mappedBy="booking", fetch=FetchType.EAGER)
+	private Set<Booking> booking;
 
 	public String getContactno() {
 		return contactno;
