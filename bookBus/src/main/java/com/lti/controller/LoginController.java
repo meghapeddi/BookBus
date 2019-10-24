@@ -28,13 +28,10 @@ public class LoginController {
 		List<City>city = loginService.fetchCity();
 		if (email.equals(user.getEmail()) && password.equals(user.getPassword())) {
 			model.put("user", user);
+			model.put("city",city);
 			return "index.jsp";
-		} else if (email.equals("admin@lti.com") && password.equals("admin123")) {
-			model.put("message", "login success");
-			return "loginsuccess.jsp";
-		}
-		else{
-			return "loginfail.jsp";
+		}else{
+			return "login.jsp";
 		}
 		
 		

@@ -19,7 +19,7 @@ public class RegisterController {
 	private UserInterface userInterface;
 
 	@RequestMapping(path = "/register.lti", method = RequestMethod.POST)
-	public String register(UserDTO data, Map model) {
+	public String register(UserDTO data, Map model) throws Exception {
 
 		User user = new User();
 		user.setFname(data.getFname());
@@ -28,19 +28,17 @@ public class RegisterController {
 		user.setPassword(data.getPassword());
 		user.setContactno(data.getContactno());
 		user.setGender(data.getGender());
-		//user.setType(data.getType());
-		
+		// user.setType(data.getType());
+
 		int flag = userInterface.register(user);
-		
-		if(flag==1){
+
+		if (flag == 1) {
 			model.put("message", "registered");
 			return "login.jsp";
+		} else {
+			return "register.jsp";
 		}
-		else{
-			model.put("message", "unregistered");
-			return "error.jsp";
-		}
-		
+
 	}
 
 }

@@ -25,7 +25,7 @@ public class SearchDao {
 	private EntityManager entityManager;
 	
 	@Transactional
-	public List<BusDetails> getBusDetails(String src, String destination) {
+	public List<BusDetails> getBusDetails(String src, String destination) throws Exception {
 		String sql = "select b from BusDetails b where b.src=:src and b.destination=:des";
 		Query query = entityManager.createQuery(sql);
 		query.setParameter("src", src);
@@ -33,7 +33,7 @@ public class SearchDao {
 		return query.getResultList();
 	}
 
-	public List<Stops> getBoardingStops(String src) {
+	public List<Stops> getBoardingStops(String src) throws Exception{
 		// TODO Auto-generated method stub
 		String sql= "select s from Stops s where src.city=:city ";
 		Query query = entityManager.createQuery(sql);
@@ -41,7 +41,7 @@ public class SearchDao {
 		return query.getResultList();
 	}
 
-	public List<Stops> getDroppingStops(String destination) {
+	public List<Stops> getDroppingStops(String destination) throws Exception{
 		// TODO Auto-generated method stub
 		String sql= "select s from Stops s where src.city=:city ";
 		Query query = entityManager.createQuery(sql);

@@ -26,7 +26,7 @@ public class SearchController {
 	private SearchService searchService;
 	
 	@RequestMapping(path="/search.lti", method=RequestMethod.POST)
-	public String search(@RequestParam("src") String src, @RequestParam("destination")String destination, @RequestParam("date")String dateOfJourney, Map model) {
+	public String search(@RequestParam("src") String src, @RequestParam("destination")String destination, @RequestParam("date")String dateOfJourney, Map model) throws Exception{
 		LocalDate date = LocalDate.parse(dateOfJourney);
 		//DayOfWeek day= date.getDayOfWeek();
 		//System.out.println(day);

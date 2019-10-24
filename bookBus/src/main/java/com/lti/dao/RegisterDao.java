@@ -13,22 +13,21 @@ import com.lti.entity.User;
 public class RegisterDao {
 
 	@Autowired
-	 private GenericDao genericDao;
-	
+	private GenericDao genericDao;
+
 	@PersistenceContext
 	private EntityManager entityManager;
 
 	@Transactional
-	public int save(User user) {
+	public int save(User user) throws Exception {
 		int flag = 0;
-		if (user != null) {
-			flag = 1;
-			genericDao.save(user);
-		} else {
-			flag = 0;
-			System.out.println("Don't register user");
-		}
+			if (user != null) {
+				flag = 1;
+				genericDao.save(user);
+			}else {
+				flag = 0;
+				System.out.println("Don't register user");
+			}
 		return flag;
-
 	}
 }

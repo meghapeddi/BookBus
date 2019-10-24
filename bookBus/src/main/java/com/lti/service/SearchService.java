@@ -17,17 +17,17 @@ public class SearchService {
 	@Autowired
 	SearchDao searchDao;
 	
-	public List<BusDetails> search(String src, String destination) {
+	public List<BusDetails> search(String src, String destination) throws Exception{
 		List<BusDetails> list=searchDao.getBusDetails(src, destination);
 		return list;
 	}
 	
-	public List<Stops> searchBoardingStops(String src){
+	public List<Stops> searchBoardingStops(String src) throws Exception{
 		List<Stops> stops = searchDao.getBoardingStops(src);
 		return stops;	
 	}
 	
-	public List<Stops> searchDroppingStops(String destination){
+	public List<Stops> searchDroppingStops(String destination) throws Exception{
 		List<Stops> stops = searchDao.getDroppingStops(destination);
 		return stops;	
 	}
