@@ -13,7 +13,7 @@ import com.lti.entity.User;
 import com.lti.service.ResetPasswordService;
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes("forgotuser")
 public class ResetPasswordController {
 	
 	@Autowired
@@ -21,7 +21,7 @@ public class ResetPasswordController {
 	
 	@RequestMapping(path="/resetPassword.lti", method=RequestMethod.POST)
 	public String resetPassword(@RequestParam("new")String newPassword,@RequestParam("confirm") String confirmPassword, Map model) throws Exception {
-		User user = (User) model.get("user");
+		User user = (User) model.get("forgotuser");
 		String email = user.getEmail();
 		if(newPassword.equals(confirmPassword)) {
 			resetPasswordService.changePassword(email, newPassword);

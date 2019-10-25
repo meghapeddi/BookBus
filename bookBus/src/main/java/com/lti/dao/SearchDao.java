@@ -23,7 +23,7 @@ public class SearchDao {
 
 	@PersistenceContext
 	private EntityManager entityManager;
-	
+
 	@Transactional
 	public List<BusDetails> getBusDetails(String src, String destination) throws Exception {
 		String sql = "select b from BusDetails b where b.src=:src and b.destination=:des";
@@ -33,17 +33,17 @@ public class SearchDao {
 		return query.getResultList();
 	}
 
-	public List<Stops> getBoardingStops(String src) throws Exception{
+	public List<Stops> getBoardingStops(String src) throws Exception {
 		// TODO Auto-generated method stub
-		String sql= "select s from Stops s where src.city=:city ";
+		String sql = "select s from Stops s where s.city=:city ";
 		Query query = entityManager.createQuery(sql);
 		query.setParameter("city", src);
 		return query.getResultList();
 	}
 
-	public List<Stops> getDroppingStops(String destination) throws Exception{
+	public List<Stops> getDroppingStops(String destination) throws Exception {
 		// TODO Auto-generated method stub
-		String sql= "select s from Stops s where src.city=:city ";
+		String sql = "select s from Stops s where s.city=:city ";
 		Query query = entityManager.createQuery(sql);
 		query.setParameter("city", destination);
 		return query.getResultList();

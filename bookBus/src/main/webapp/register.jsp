@@ -12,14 +12,15 @@
 <body>
 	<div class="container" id="container">
 
-		<form name="registerForm" action="register.lti" method="post" onsubmit="return registerValidate()">
+		<form name="registerForm" action="register.lti" method="post"
+			onsubmit="return registerValidate() && contactValidate()">
 			<h2>Register</h2>
 
 			<input name="fname" placeholder="First Name" required /> <input
 				name="lname" placeholder="Last Name" required /> <input
 				type="email" name="email" placeholder="Email" required /> <input
-				name="password" type="password" placeholder="Password" id="password"required /> <input
-				name="confirmpassword" type="password" placeholder="Confirm Password" id="confirmpassword"
+				id="password" type="password" placeholder="Password" required /> <input
+				id="confirmpassword" type="password" placeholder="Confirm Password"
 				required /> <input name="contactno" placeholder="ContactNo"
 				required />
 			<div class="gender">

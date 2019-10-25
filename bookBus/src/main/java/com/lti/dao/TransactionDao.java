@@ -3,6 +3,7 @@ package com.lti.dao;
 import java.time.LocalDate;
 
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,8 @@ import com.lti.entity.User;
 
 @Repository
 public class TransactionDao {
-	@Autowired
+	
+	@PersistenceContext
 	EntityManager entityManager;
 
 	public int getAvailableSeats(LocalDate date) throws Exception {

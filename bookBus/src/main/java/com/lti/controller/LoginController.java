@@ -29,7 +29,7 @@ public class LoginController {
 		if (email.equals(user.getEmail()) && password.equals(user.getPassword())) {
 			model.put("user", user);
 			model.put("city",city);
-			return "index.jsp";
+			return "home.jsp";
 		}else{
 			return "login.jsp";
 		}

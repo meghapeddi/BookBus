@@ -106,7 +106,7 @@ input:focus{
 	overflow: hidden;
 	width: 350px;
 	max-width: 100%;
-	min-height: 260px;
+	min-height: 285px;
 }
 
 .form-container {
@@ -120,6 +120,11 @@ input:focus{
 	left: 0;
 	width: 100%;
 	z-index: 2;
+}
+
+.forgot{
+	display: inline-block;
+	margin: 1px 1px;
 }
 
 

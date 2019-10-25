@@ -153,7 +153,7 @@ input {
     border-bottom: 2px solid #d1cece;
 	padding: 12px 15px;
 	margin: 8px 0;
-    width: 27%;
+    width: 14%;
     display: inline-block;
 }
 
@@ -177,7 +177,7 @@ select{
     border-bottom: 2px solid #d1cece;
 	padding: 8px 2px;
 	margin: 8px 0;
-    width: 26%;
+    width: 10%;
     display: inline-block;
 }
 

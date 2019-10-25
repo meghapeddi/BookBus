@@ -17,7 +17,7 @@
 	<bean id="oracleDS" class="org.apache.commons.dbcp2.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.100.240:1521:XE" />
 		<property name="username" value="bus_admin" />
 		<property name="password" value="password" />
 	</bean>
@@ -51,6 +51,29 @@
 	<!-- Enabling support for File Upload in Spring MVC -->
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSizePerFile" value="52428800"/>
+    </bean>
+	
+	<!--  This bean will manage email -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.office365.com"/>
+        <property name="port" value="587" />
+        <property name="username" value="kunal.mestry@lntinfotech.com"/>
+        <property name="password" value="deepalikdm@1712"/>
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">smtp</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.debug">true</prop>
+                <prop key="mail.smtp.connecttimeout">50000</prop>
+                <prop key="mail.smtp.timeout">30000</prop>
+                <prop key="mail.smtp.writetimeout">50000</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <bean id="preConfiguredMessage" class="org.springframework.mail.SimpleMailMessage">
+        <property name="from" value="kunal.mestry@lntinfotech.com"></property>
     </bean>
 	
 

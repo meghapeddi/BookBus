@@ -77,40 +77,43 @@
 		</div>
 	</div>
 
+	<form action="submit">
+		<div class="bus_detail">
+			<div class="bus_card">
+				<span id="busname">${busDetails }</span><br>
+				<p id="type">AC</p>
+			</div>
 
-	<div class="bus_detail">
-		<div class="bus_card">
-			<span id="busname">Neeta Volvo</span><br>
-			<p id="type">AC</p>
+			<div class="ac"></div>
+			<div class="time">7:50</div>
+			<div class="sourcestops">
+				<select name="src_stps" id="">
+					<option value="borivali">Borivali</option>
+					<option value="dadar">Dadar</option>
+					<option value="kalyan">Kalyan</option>
+					<option value="vashi">Vashi</option>
+
+				</select>
+			</div>
+			<div class="deststops">
+				<select name="dest_stps" id="">
+					<option value="hinjewadi">Hinjewadi</option>
+					<option value="swargate">Swargate</option>
+					<option value="wakad">Wakad</option>
+					<option value="kothrud">Kothrud</option>
+				</select>
+			</div>
+
+			<div class="seatsnum"
+				style="width: 6%; display: inline-block; float: left; margin: 41px -33px;">
+				<label>Seats:</label> <span>20</span>
+			</div>
+
+			<div class="seatbtn">
+				<button onclick="">View Seats</button>
+			</div>
 		</div>
-
-		<div class="ac"></div>
-		<div class="time">7:50</div>
-		<div class="sourcestops">
-			<select name="src_stps" id="">
-				<option value="borivali">Borivali</option>
-				<option value="dadar">Dadar</option>
-				<option value="kalyan">Kalyan</option>
-				<option value="vashi">Vashi</option>
-
-			</select>
-		</div>
-		<div class="deststops">
-			<select name="dest_stps" id="">
-				<option value="hinjewadi">Hinjewadi</option>
-				<option value="swargate">Swargate</option>
-				<option value="wakad">Wakad</option>
-				<option value="kothrud">Kothrud</option>
-
-			</select>
-		</div>
-		<div class="seatbtn">
-			<button>View Seats</button>
-
-		</div>
-
-	</div>
-
+	</form>
 	<footer>
 	<p>Copyright @LTI</p>
 	</footer>

@@ -10,14 +10,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.lti.dto.UserDTO;
 import com.lti.entity.User;
 import com.lti.interfaces.UserInterface;
-import com.lti.service.RegisterService;
+import com.lti.service.SendMailService;
 
 @Controller
 public class RegisterController {
 
 	@Autowired
 	private UserInterface userInterface;
-
+	
+	@Autowired
+	private SendMailService sendMailService;
+	
 	@RequestMapping(path = "/register.lti", method = RequestMethod.POST)
 	public String register(UserDTO data, Map model) throws Exception {
 

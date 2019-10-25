@@ -22,12 +22,27 @@ function registerValidate() {
         alert("Enter valid Contact Number..!!")
         return false;
     }
+     
 
     if( document.registerForm.gender.value == "" ) {
         alert( "Please select your Gender..!!" );
         return false;
     }
+}
 
+function contactValidate() {
+	var reg = /^[A-Za-z]+$/;
+    var num = document.forms["registerForm"]["contactno"].value;
+    if(reg.test(num))
+    {
+    	alert("Contact No should only have numeric values..!!")
+    }
+    else
+    {
+    	
+    }
+    return false;
+    
 }
 
 function passwordValidate() {

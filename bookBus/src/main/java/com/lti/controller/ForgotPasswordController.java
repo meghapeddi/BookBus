@@ -13,7 +13,7 @@ import com.lti.entity.User;
 import com.lti.service.ForgotPasswordService;
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes("forgotuser")
 public class ForgotPasswordController {
 
 	@Autowired
@@ -23,7 +23,7 @@ public class ForgotPasswordController {
 	public String forgotPassword(@RequestParam("email") String email, Map model) throws Exception {
 		User user = forgotPasswordService.verifyEmail(email);
 		if(email.equals(user.getEmail())) {
-			model.put("user", user);
+			model.put("forgotuser", user);
 			return "resetpassword.jsp";
 		} else {
 			return "forgotpassword.jsp";

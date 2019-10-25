@@ -23,15 +23,15 @@
 			<h1>bookBUS</h1>
 		</div>
 
-		<!--Navigation Bar-->
-		<div class="nav">
-			<ul>
-				<li><a href="#home">Freq Routes</a></li>
-				<li><a href="#news">Profits</a></li>
-				<li><a href="#contact">Preferred Buses</a></li>
-				<li><a href="#about">Reservation Details</a></li>
-			</ul>
-		</div>
+<!-- 		<!--Navigation Bar--> 
+<!-- 		<div class="nav"> -->
+<!-- 			<ul> -->
+<!-- 				<li><a href="#home">Freq Routes</a></li> -->
+<!-- 				<li><a href="#news">Profits</a></li> -->
+<!-- 				<li><a href="#contact">Preferred Buses</a></li> -->
+<!-- 				<li><a href="#about">Reservation Details</a></li> -->
+<!-- 			</ul> -->
+<!-- 		</div> -->
 
 		<div class="contact_icon">
 			<div class="dropdown">
@@ -44,8 +44,6 @@
 	<div class="side_nav">
 		<ul>
 			<li><a href="addbusdetails.jsp">Add Bus Details</a></li>
-
-			<li><a href="addslots.jsp">Add Slots</a></li>
 
 			<li><a class="active" href="addstops.jsp">Add Stops</a></li>
 

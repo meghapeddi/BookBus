@@ -179,6 +179,8 @@
     padding: 2px;
 }
 
+
+
 .seatbtn {
     width: 10%;
     float: right;
@@ -212,6 +214,7 @@
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
+
 
 select{
     background-color: transparent;
