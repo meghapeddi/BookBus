@@ -46,14 +46,6 @@ public class BusDetails {
 	@OneToMany(mappedBy="busDetails", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<SeatsAvailable> seatsAvailable;
 	
-	/*
-	 * @OneToOne(mappedBy = "bus", cascade = CascadeType.ALL) private Fare fare;
-	 * 
-	 * public Fare getFare() { return fare; }
-	 * 
-	 * public void setFare(Fare fare) { this.fare = fare; }
-	 */
-	
 	public String getBusNo() {
 		return busNo;
 	}

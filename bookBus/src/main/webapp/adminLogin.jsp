@@ -6,29 +6,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" media="screen" href="login.css" />
 <script src="login.js"></script>
-<title>Login</title>
+<title>Admin Login</title>
 </head>
 <body>
 	<div class="container" id="container">
 
-		<form name="registerForm" action="login.lti" method="post"
+		<form name="registerForm" action="adminLogin.lti" method="post"
 			onsubmit="return registerValidate()">
-			<h2>Login</h2>
+			<h2> Admin Login</h2>
 
 			<input type="email" name="email" placeholder="Email" required /> <input
-				id="password" name="password" type="password" placeholder="Password" required />
+				id="password" type="password" placeholder="Password" name="password" required />
 				
-				<div class="forgot">
-				<a href="forgotpassword.jsp">Forgot Password</a>
-				</div>
 			<div style="width: 97%; margin-top: 26px; height: inherit;">
 				<div style="width: 50%; float: left;">
 				
 					<button type="submit">Sign In</button>
 				</div>
 				<div>
-					<button type="submit" onclick="location.href='register.jsp'">Sign
-						Up</button>
+					<button type="submit" onclick="location.href='login.jsp'">Cancel</button>
 				</div>
 			</div>
 		</form>

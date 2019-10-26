@@ -9,22 +9,6 @@ public class UserDTO {
 	private String contactno;
 	private String gender;
 
-	public String getGender() {
-		return gender;
-	}
-
-	public String getContactno() {
-		return contactno;
-	}
-
-	public void setContactno(String contactno) {
-		this.contactno = contactno;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
 	public String getFname() {
 		return fname;
 	}
@@ -55,6 +39,22 @@ public class UserDTO {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public String getContactno() {
+		return contactno;
+	}
+
+	public void setContactno(String contactno) {
+		this.contactno = contactno;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 }

@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.entity.BusDetails;
+import com.lti.entity.SeatsAvailable;
 import com.lti.entity.Stops;
 import com.lti.service.SearchService;
 
 
 @Controller 
-@SessionAttributes("date")
+@SessionAttributes({"date","bus"})
 public class SearchController {
 
 	@Autowired
@@ -27,12 +28,14 @@ public class SearchController {
 	
 	@RequestMapping(path="/search.lti", method=RequestMethod.POST)
 	public String search(@RequestParam("src") String src, @RequestParam("destination")String destination, @RequestParam("date")String dateOfJourney, Map model) throws Exception{
-		LocalDate date = LocalDate.parse(dateOfJourney);
+		LocalDate dateSelected = LocalDate.parse(dateOfJourney);
+		String date=dateSelected.toString();
 		//DayOfWeek day= date.getDayOfWeek();
 		//System.out.println(day);
-		List<BusDetails> bus = searchService.search(src, destination);
+		List<BusDetails> bus = searchService.search(src, destination, date);
 		List<Stops> srcList = searchService.searchBoardingStops(src);
-		List<Stops> destinationList = searchService.searchBoardingStops(src);
+		List<Stops> destinationList = searchService.searchDroppingStops(destination);
+		System.out.println(bus.get(0).getBusName());
 		model.put("bus", bus);
 		model.put("date",date);
 		model.put("srcList", srcList);

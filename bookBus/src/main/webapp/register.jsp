@@ -19,8 +19,8 @@
 			<input name="fname" placeholder="First Name" required /> <input
 				name="lname" placeholder="Last Name" required /> <input
 				type="email" name="email" placeholder="Email" required /> <input
-				id="password" type="password" placeholder="Password" required /> <input
-				id="confirmpassword" type="password" placeholder="Confirm Password"
+				id="password" name="password" type="password" placeholder="Password" required /> <input
+				id="confirmpassword" name = "confirmpassword" type="password" placeholder="Confirm Password"
 				required /> <input name="contactno" placeholder="ContactNo"
 				required />
 			<div class="gender">

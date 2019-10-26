@@ -15,7 +15,7 @@ public class RegisterService implements UserInterface{
 	@Autowired
 	private RegisterDao dao;
 
-	public int register(User user) throws Exception{
+	public int register(User user){
 		// TODO Auto-generated method stub
 		int flag  = dao.save(user);
 		return flag;

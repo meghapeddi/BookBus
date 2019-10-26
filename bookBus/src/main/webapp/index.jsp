@@ -42,10 +42,10 @@
         </div>
 
 	    <div id="searchForm">
-        <form action="search.jsp" style="padding: 37px;">
+        <form action="login.jsp" method="post" style="padding: 37px;">
             <div class="fields">
                 <label>From</label>
-                <select class="box">
+                <select class="box" name="src">
                     <option value="" disabled="disabled">Choose an option</option>
                     <option value="Mumbai">Mumbai</option>
                     <option value="Pune">Pune</option>
@@ -55,8 +55,8 @@
             </div>
             <div class="fields">
                 <label>To</label>
-                <select class="box">
-                    <option value=""    disabled="disabled">Choose an option</option>
+                <select class="box" name="destination">
+                    <option value="" disabled="disabled">Choose an option</option>
                     <option value="Mumbai">Mumbai</option>
                     <option value="Pune">Pune</option>
                     <option value="Delhi">Delhi</option>

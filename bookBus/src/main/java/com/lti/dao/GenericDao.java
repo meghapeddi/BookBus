@@ -14,7 +14,7 @@ public class GenericDao {
 	
 	@Transactional
 	public void save(Object object) {
-			entityManager.persist(object);			
+			entityManager.merge(object);			
 		
 	}
 }

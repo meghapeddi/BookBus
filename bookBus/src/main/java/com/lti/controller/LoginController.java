@@ -3,8 +3,11 @@ package com.lti.controller;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,7 +18,7 @@ import com.lti.entity.User;
 import com.lti.service.LoginService;
 
 @Controller
-@SessionAttributes("user")
+@SessionAttributes({"user","city"})
 public class LoginController {
 	
 	@Autowired
@@ -25,10 +28,11 @@ public class LoginController {
 	
 	public String verify(@RequestParam("email") String email,@RequestParam("password") String password,Map model){
 		User user = loginService.verify(email,password);
-		List<City>city = loginService.fetchCity();
+		List<City>cities = loginService.fetchCity();
+		model.put("city",cities);
 		if (email.equals(user.getEmail()) && password.equals(user.getPassword())) {
 			model.put("user", user);
-			model.put("city",city);
+//			model.put("city",cities);
 			return "home.jsp";
 		}else{
 			return "login.jsp";
@@ -43,6 +47,13 @@ public class LoginController {
 			return "loginfail.jsp";
 		}*/
 		
+	}
+	
+	@RequestMapping(path = "/logout.lti", method=RequestMethod.POST)
+	public String logout(ModelMap model, HttpSession session){
+		model.clear();
+		session.invalidate();
+		return "index.jsp";
 	}
 
 }

@@ -20,7 +20,7 @@ public class City {
 
 	@Column(name = "cityName")
 	private String city;
-
+	
 	public int getId() {
 		return id;
 	}

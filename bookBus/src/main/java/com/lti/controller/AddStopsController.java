@@ -17,7 +17,7 @@ public class AddStopsController {
 	private AddStopsService addStopsService;
 
 	@RequestMapping(path = "/addStops.lti", method = RequestMethod.POST)
-	public String addStops(Stops stop, Map model) {
+	public String addStops(Stops stop, Map model) throws Exception {
 		int flag = addStopsService.addStops(stop);
 		if (flag == 1) {
 			model.put("message", "Stop added");

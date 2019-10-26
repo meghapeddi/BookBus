@@ -13,7 +13,7 @@ public class AddStopsService implements StopInterface {
 	@Autowired
 	private AddStopsDao addStopsDao;
 
-	public int addStops(Stops stop) {
+	public int addStops(Stops stop) throws Exception {
 		// TODO Auto-generated method stub
 		int flag = addStopsDao.save(stop);
 		return flag;

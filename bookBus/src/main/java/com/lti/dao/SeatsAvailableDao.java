@@ -23,10 +23,12 @@ public class SeatsAvailableDao {
 		return (BusDetails) query.getSingleResult();
 	}
 	
-	public SeatsAvailable availableSeats(String date) throws Exception {
-		String sql = "select s from SeatsAvailable s where s.date=:date";
+	public SeatsAvailable availableSeats(String busNo, String date) throws Exception {
+		String sql = "select s from SeatsAvailable s where s.busno=:no s.date=:date";
 		Query query=entityManager.createQuery(sql);
+		query.setParameter("no", busNo);
 		query.setParameter("date", date);
 		return (SeatsAvailable) query.getSingleResult();
 	}
+	
 }

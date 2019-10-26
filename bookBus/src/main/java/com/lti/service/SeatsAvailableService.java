@@ -1,8 +1,5 @@
 package com.lti.service;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,23 +13,13 @@ public class SeatsAvailableService {
 	@Autowired
 	private SeatsAvailableDao seatsAvailableDao;
 	
-	public SeatsAvailable availableSeats(String date) throws Exception{
-		SeatsAvailable seats=seatsAvailableDao.availableSeats(date);
-		return seats;
-	}
-
 	public BusDetails getBusDetails(String busNo) throws Exception {
-		// TODO Auto-generated method stub
-		return seatsAvailableDao.getBusDetails(busNo);
-		
+		BusDetails busDetails=seatsAvailableDao.getBusDetails(busNo);
+		return busDetails;
 	}
 	
-	public void displaySeatsPresent(){
-		
-
-		
-		
-		
-		
+	public SeatsAvailable availableSeats(String busNo, String date) throws Exception{
+		SeatsAvailable seats=seatsAvailableDao.availableSeats(busNo, date);
+		return seats;
 	}
 }

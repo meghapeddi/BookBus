@@ -19,7 +19,7 @@ public class RegisterDao {
 	private EntityManager entityManager;
 
 	@Transactional
-	public int save(User user) throws Exception {
+	public int save(User user){
 		int flag = 0;
 			if (user != null) {
 				flag = 1;

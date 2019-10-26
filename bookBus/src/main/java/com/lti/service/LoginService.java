@@ -16,7 +16,7 @@ public class LoginService {
 	@Autowired
 	private LoginDao loginDao;
 
-	public User verify(String email, String password) {
+	public User verify(String email, String password){
 		
 		User user = loginDao.fetchUser(email);
 		return user;

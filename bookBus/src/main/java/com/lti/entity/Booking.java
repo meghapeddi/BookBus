@@ -53,11 +53,29 @@ public class Booking {
 	public void setDateOfJourney(String dateOfJourney) {
 		this.dateOfJourney = dateOfJourney;
 	}
-	public int getFare() {
+	public int getTotalFare() {
 		return totalFare;
 	}
-	public void setFare(int fare) {
-		this.totalFare = fare;
+	public void setTotalFare(int totalFare) {
+		this.totalFare = totalFare;
+	}
+	public BusDetails getBusDetails() {
+		return busDetails;
+	}
+	public void setBusDetails(BusDetails busDetails) {
+		this.busDetails = busDetails;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Set<PassengerDetails> getPassenger() {
+		return passenger;
+	}
+	public void setPassenger(Set<PassengerDetails> passenger) {
+		this.passenger = passenger;
 	}
 
 }

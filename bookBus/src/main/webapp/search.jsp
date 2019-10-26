@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.io.*,java.util.*, java.sql.*" %>
+<%@ page import = "javax.servlet.http.*, javax.servlet.*" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -77,43 +81,95 @@
 		</div>
 	</div>
 
-	<form action="submit">
-		<div class="bus_detail">
-			<div class="bus_card">
-				<span id="busname">${busDetails }</span><br>
-				<p id="type">AC</p>
-			</div>
+	 	<form action="search.lti" method="POST">
+	<%-- 		<c:forEach var="buses" items="${ bus }"> --%>
+	<%-- 		<p>${ buses.busName }</p> --%>
+	<!-- 		<div class="bus_detail"> -->
+	<!-- 			<div class="bus_card"> -->
+	<%-- 				<span id=	"busname">${ buses.busName }</span><br> --%>
+	<%-- 				<p id="type">${ busDetails.type }</p> --%>
+	<!-- 			</div> -->
 
-			<div class="ac"></div>
-			<div class="time">7:50</div>
-			<div class="sourcestops">
-				<select name="src_stps" id="">
-					<option value="borivali">Borivali</option>
-					<option value="dadar">Dadar</option>
-					<option value="kalyan">Kalyan</option>
-					<option value="vashi">Vashi</option>
+	<!-- 			<div class="ac"></div> -->
+	<%-- 			<div class="time">${ busDetails.departureTime }</div> --%>
+	<%-- 			<div class="time">${ busDetails.arrivalTime }</div> --%>
+	<!-- 			<div class="sourcestops"> -->
+	<!-- 				<select name="src_stps" id=""> -->
+	<%-- 				<c:forEach var="srcStops" items="${ srcList }"> --%>
+	<%-- 					<option value="${ srcList.stopName }">${ srcList.stopName }</option> --%>
+	<%-- 				</c:forEach> --%>
+	<!-- 				</select> -->
+	<!-- 			</div> -->
+	<!-- 			<div class="deststops"> -->
+	<!-- 				<select name="dest_stps" id=""> -->
+	<%-- 					<c:forEach var="destStops" items="${ destList }"> --%>
+	<%-- 					<option value="${ destList.stopName }">${ destList.stopName }</option> --%>
+	<%-- 					</c:forEach> --%>
+	<!-- 				</select> -->
+	<!-- 			</div> -->
 
-				</select>
-			</div>
-			<div class="deststops">
-				<select name="dest_stps" id="">
-					<option value="hinjewadi">Hinjewadi</option>
-					<option value="swargate">Swargate</option>
-					<option value="wakad">Wakad</option>
-					<option value="kothrud">Kothrud</option>
-				</select>
-			</div>
+	<!-- 			<div class="seatsnum" -->
+	<!-- 				style="width: 6%; display: inline-block; float: left; margin: 41px -33px;"> -->
+	<%-- 				<label>Seats:</label> <span>${ busDetails.SeatsAvailable.availableSeats }</span> --%>
+	<!-- 			</div> -->
 
-			<div class="seatsnum"
-				style="width: 6%; display: inline-block; float: left; margin: 41px -33px;">
-				<label>Seats:</label> <span>20</span>
-			</div>
+	<!-- 			<div class="seatbtn"> -->
+	<!-- 				<button onclick="">View Seats</button> -->
+	<!-- 			</div> -->
+	<!-- 		</div> -->
+	<%-- 		</c:forEach> --%>
+	<!-- 	</form> -->
 
-			<div class="seatbtn">
-				<button onclick="">View Seats</button>
-			</div>
-		</div>
-	</form>
+
+	<table border="1">
+		<thead>
+			<tr>
+				<th>Bus no</th>
+				<th>Bus name</th>
+				<th>Source</th>
+				<th>Destination</th>
+				<th>Type</th>
+				<th>Fare</th>
+				<th>Arrival Time</th>
+				<th>Departure Time</th>
+				<th>Time of travel</th>
+				<th>Source Stops</th>
+				<th>Destination Stops</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="data" items="${bus}">
+				<tr>
+					<td>${data.busNo}</td>
+					<td>${data.busName}</td>
+					<td>${data.src}</td>
+					<td>${data.destination}</td>
+					<td>${data.type}</td>
+					<td>${data.fare}</td>
+					<td>${data.departureTime}</td>
+					<td>${data.arrivalTime}</td>
+					<td>${data.travelTime}</td>
+					<td><select name="src_stps" id="">
+		 				<c:forEach var="srcStops" items="${ srcList }">
+		 					<option value="${ srcStops.stopName }">${ srcStops.stopName }</option>
+						</c:forEach>
+	 					</select>
+	 				</td>
+	 				<td><select name="dest_stps" id="">
+	 						<c:forEach var="destStops" items="${ destList }">
+		 					<option value="${ destStops.stopName }">${ destStops.stopName }</option>
+		 					</c:forEach>
+	 					</select>
+	 				</td>
+	 				<td><div class="seatbtn">
+	 						<button onclick="">View Seats</button>
+	 					</div>
+	 				</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 	<footer>
 	<p>Copyright @LTI</p>
 	</footer>

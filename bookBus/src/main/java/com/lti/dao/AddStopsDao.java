@@ -11,7 +11,7 @@ public class AddStopsDao {
 	@Autowired
 	private GenericDao genericDao;
 	
-	public int save(Stops stop){
+	public int save(Stops stop) throws Exception{
 		int flag=0;
 		if (stop != null) {
 			flag = 1;

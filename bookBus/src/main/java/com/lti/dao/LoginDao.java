@@ -18,7 +18,7 @@ public class LoginDao {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public User fetchUser(String email) {
+	public User fetchUser(String email){
 		// TODO Auto-generated method stub
 		String sql = "select u from User u where u.email = :em";
 		Query query = entityManager.createQuery(sql);
@@ -27,7 +27,7 @@ public class LoginDao {
 
 	}
 
-	public List<City> getCity() {
+	public List<City> getCity(){
 		// TODO Auto-generated method stub
 		String sql= "select c from City c";
 		Query query = entityManager.createQuery(sql);

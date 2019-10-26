@@ -1,5 +1,7 @@
 package com.lti.controller;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,21 +13,27 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.entity.BusDetails;
 import com.lti.entity.SeatsAvailable;
+import com.lti.entity.User;
 import com.lti.service.SeatsAvailableService;
 
 @Controller
-@SessionAttributes({"seats", "busDetails"})
+@SessionAttributes({"searchValues","date","noOfSeats"})
 public class SeatsAvailableController {
 
 	@Autowired
 	private SeatsAvailableService seatsAvailableService;
 	
 		@RequestMapping(path="availableSeats.lti", method=RequestMethod.POST)
-		public String available(@RequestParam("busNo")String busNo, @RequestParam("date")String date, Map model) throws Exception {
+		public String available(@RequestParam("noOfSeats")int noOfSeats, Map model) throws Exception {
+		ArrayList<String> searchValues=(ArrayList<String>)model.get("searchValues");
+		String busNo = searchValues.get(0);
+		LocalDate date =(LocalDate)model.get("date");
+		String dateOfJourney=date.toString();
 		BusDetails bus = seatsAvailableService.getBusDetails(busNo);
-		SeatsAvailable seats=seatsAvailableService.availableSeats(date);
+		SeatsAvailable seats=seatsAvailableService.availableSeats(busNo, dateOfJourney);
 		model.put("seats", seats);
 		model.put("busDetails", bus);
+		model.put("noOfSeats", noOfSeats);
 		return "";
 	}
 }

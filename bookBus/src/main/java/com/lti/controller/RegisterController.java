@@ -22,7 +22,7 @@ public class RegisterController {
 	private SendMailService sendMailService;
 	
 	@RequestMapping(path = "/register.lti", method = RequestMethod.POST)
-	public String register(UserDTO data, Map model) throws Exception {
+	public String register(UserDTO data, Map model){
 
 		User user = new User();
 		user.setFname(data.getFname());
@@ -31,7 +31,7 @@ public class RegisterController {
 		user.setPassword(data.getPassword());
 		user.setContactno(data.getContactno());
 		user.setGender(data.getGender());
-		// user.setType(data.getType());
+		//user.setType(data.getType());
 
 		int flag = userInterface.register(user);
 

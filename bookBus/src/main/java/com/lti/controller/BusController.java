@@ -29,7 +29,6 @@ public class BusController {
 		bus.setDestination(data.getDestination());
 		bus.setDepartureTime(data.getDepartureTime());
 		bus.setArrivalTime(data.getArrivalTime());
-		//bus.setSlotNo(data.getSlotNo());
 		bus.setType(data.getType());
 		bus.setFare(data.getFare());
 		
