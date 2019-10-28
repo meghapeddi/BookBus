@@ -1,15 +1,19 @@
 package com.lti.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.lti.dto.BusDTO;
 import com.lti.entity.BusDetails;
+import com.lti.entity.City;
 import com.lti.interfaces.BusInterface;
+import com.lti.service.LoginService;
 
 @Controller
 public class BusController {
@@ -19,9 +23,6 @@ public class BusController {
 
 	@RequestMapping(path = "/addbuses.lti", method = RequestMethod.POST)
 	public String register(BusDTO data, Map model) {
-		
-		System.out.println(data.getFare());
-
 		BusDetails bus = new BusDetails();
 		bus.setBusNo(data.getBusNo());
 		bus.setBusName(data.getBusName());

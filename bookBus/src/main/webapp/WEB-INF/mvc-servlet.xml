@@ -54,11 +54,11 @@
     </bean>
 	
 	<!--  This bean will manage email -->
-	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	 <!-- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.office365.com"/>
         <property name="port" value="587" />
-        <property name="username" value="kunal.mestry@lntinfotech.com"/>
-        <property name="password" value="deepalikdm@1712"/>
+        <property name="username" value="megha.peddi@lntinfotech.com"/>
+        <property name="password" value="AsusxD@21"/>
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.transport.protocol">smtp</prop>
@@ -70,11 +70,11 @@
                 <prop key="mail.smtp.writetimeout">50000</prop>
             </props>
         </property>
-    </bean>
+    </bean> 
     
     <bean id="preConfiguredMessage" class="org.springframework.mail.SimpleMailMessage">
-        <property name="from" value="kunal.mestry@lntinfotech.com"></property>
-    </bean>
+        <property name="from" value="megha.peddi@lntinfotech.com"></property>
+    </bean> -->
 	
 
 </beans>

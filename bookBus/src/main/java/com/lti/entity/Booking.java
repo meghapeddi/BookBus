@@ -1,5 +1,6 @@
 package com.lti.entity;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import net.bytebuddy.asm.Advice.Local;
 
 @Entity
 @Table(name ="tbl_booking")
@@ -20,7 +23,7 @@ public class Booking {
 	@Column(name = "noofseats")
 	private int noOfSeats;
 	@Column(name = "dateofjourney")
-	private String dateOfJourney;
+	private LocalDate dateOfJourney;
 	@Column(name = "totalfare")
 	private int totalFare;
 	
@@ -47,10 +50,11 @@ public class Booking {
 	public void setNoOfSeats(int noOfSeats) {
 		this.noOfSeats = noOfSeats;
 	}
-	public String getDateOfJourney() {
+	
+	public LocalDate getDateOfJourney() {
 		return dateOfJourney;
 	}
-	public void setDateOfJourney(String dateOfJourney) {
+	public void setDateOfJourney(LocalDate dateOfJourney) {
 		this.dateOfJourney = dateOfJourney;
 	}
 	public int getTotalFare() {

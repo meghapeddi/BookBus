@@ -26,13 +26,14 @@ public class SearchDao {
 	private EntityManager entityManager;
 
 	@Transactional
-	public List<BusDetails> getBusDetails(String src, String destination, String date) throws Exception {
-		String sql = "select b from BusDetails b where b.src like :src and b.destination like :destination";
+	public List<BusDetails> getBusDetails(String src, String destination, LocalDate date) throws Exception {
+		//String sql = "select b from BusDetails b where b.src like :src and b.destination like :destination";
 		//String sql = "select b, s from BusDetails b join b.SeatsAvailable s where b.src=:src and b.destination=:destination and s.date=:date";
+		String sql = "select b, s from BusDetails b join fetch b.seatsAvailable s where b.src=:src and b.destination=:destination and s.dailyDate=:date";
 		Query query = entityManager.createQuery(sql);
 		query.setParameter("src", src);
 		query.setParameter("destination", destination);
-		//query.setParameter("date", date);
+		query.setParameter("date", date);
 		return query.getResultList();
 	}
 
@@ -51,11 +52,11 @@ public class SearchDao {
 		query.setParameter("city", destination);
 		return query.getResultList();
 	}
-	
-//	public List<SeatsAvailable> getAvailableSeats(String date) throws Exception {
-//		String sql = "select b, s from BusDetails b join b.SeatsAvailable where b.src=:src and b.destiantion=:destination and s.date=:date";
+}
+//	public List<SeatsAvailable> getAvailableSeats(LocalDate date) throws Exception {
+//		String sql = "select s from SeatsAvailable s where s.dailyDate=:date";
 //		Query query = entityManager.createQuery(sql);
-//		query.setParameter("da", date);
+//		query.setParameter("date", date);
 //		return query.getResultList();
 //	}
-}
+//}

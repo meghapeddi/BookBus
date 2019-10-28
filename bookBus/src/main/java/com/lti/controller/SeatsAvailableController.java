@@ -1,39 +1,40 @@
 package com.lti.controller;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
+
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import com.lti.entity.BusDetails;
-import com.lti.entity.SeatsAvailable;
-import com.lti.entity.User;
-import com.lti.service.SeatsAvailableService;
+import com.lti.dto.SearchDTO;
+
 
 @Controller
-@SessionAttributes({"searchValues","date","noOfSeats"})
+@SessionAttributes({"noOfSeats","searchData"})
 public class SeatsAvailableController {
-
-	@Autowired
-	private SeatsAvailableService seatsAvailableService;
 	
-		@RequestMapping(path="availableSeats.lti", method=RequestMethod.POST)
-		public String available(@RequestParam("noOfSeats")int noOfSeats, Map model) throws Exception {
-		ArrayList<String> searchValues=(ArrayList<String>)model.get("searchValues");
-		String busNo = searchValues.get(0);
-		LocalDate date =(LocalDate)model.get("date");
-		String dateOfJourney=date.toString();
-		BusDetails bus = seatsAvailableService.getBusDetails(busNo);
-		SeatsAvailable seats=seatsAvailableService.availableSeats(busNo, dateOfJourney);
-		model.put("seats", seats);
-		model.put("busDetails", bus);
-		model.put("noOfSeats", noOfSeats);
-		return "";
+	@RequestMapping(path="/sendBusNo.lti", method=RequestMethod.POST)
+	public String getBusNo(SearchDTO data, Map model) throws Exception {
+		SearchDTO search=new SearchDTO();
+		search.setBusNo(data.getBusNo());
+		search.setBoardingPoint(data.getBoardingPoint());
+		search.setDropPoint(data.getDropPoint());
+		
+		model.put("searchData", search);
+		return "noOfSeats.jsp";
+	}
+	
+	@RequestMapping(path="/seatsSelected.lti", method=RequestMethod.POST)
+	public String getNoOfSeats(HttpServletRequest request,@RequestParam("noOfSeats")String noOfSeats, Map model) {
+		//String busNo = request.getParameter("seats");
+		//System.out.println(busNo);
+		int noSeats = Integer.parseInt(noOfSeats);
+		model.put("noOfSeats", noSeats);
+		return "passengers.jsp";
 	}
 }

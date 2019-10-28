@@ -1,3 +1,4 @@
+
 package com.lti.controller;
 
 import java.util.List;
@@ -49,7 +50,7 @@ public class LoginController {
 		
 	}
 	
-	@RequestMapping(path = "/logout.lti", method=RequestMethod.POST)
+	@RequestMapping(path = "/logout.lti", method=RequestMethod.GET)
 	public String logout(ModelMap model, HttpSession session){
 		model.clear();
 		session.invalidate();

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.io.*,java.util.*, java.sql.*" %>
+<%@ page import = "javax.servlet.http.*, javax.servlet.*" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,8 +39,8 @@
 
 		<div class="contact_icon">
 			<div class="dropdown">
-				<img src="contact.png" style="width: 80%;" alt="CONTACT"> <a
-					href="home.jsp" style="color: black">Logout</a>
+				<img src="contact.png" style="width: 80%;" alt="CONTACT">
+				<a href="<c:url value='/adminLogout.lti' />">Logout</a>
 			</div>
 		</div>
 
@@ -60,21 +64,18 @@
 		<h3>Administrator</h3>
 		<h4>Add Bus Details</h4>
 
-		<form name="adminForm" action="submit"
-			onsubmit="return validateBusNo() && validateBusTime()">
+		<form name="adminForm" action="addbuses.lti" onsubmit="return validateBusNo() && validateBusTime()" method="POST">
 			<input type="text" placeholder="Enter Bus number" name="busno" required>
 			 <input type="text" placeholder="Enter Bus name"
 				name="busname" required> <br> <label>Source:</label> <select
 				style="width: 18%;">
-				<option value="Mumbai">Mumbai</option>
-				<option value="Pune">Pune</option>
-				<option value="Goa">Goa</option>
-				<option value="Bangalore">Bangalore</option>
+				<c:forEach var="cs" items="${cities}">
+					<option value=${ cs.city }>${cs.city}</option>
+				</c:forEach>
 			</select><br> <label>Destination:</label> <select style="width: 15%;">
-				<option value="Pune">Pune</option>
-				<option value="Goa">Goa</option>
-				<option value="Bangalore">Bangalore</option>
-				<option value="Mumbai">Mumbai</option>
+				<c:forEach var="cs" items="${cities}">
+					<option value=${ cs.city }>${cs.city}</option>
+				</c:forEach>
 			</select> <br>
 			<input type="text" placeholder="Departure Time" name="depttime" required> 
 			<input type="text" placeholder="Arrival Time" name="arrivaltime" required><br>

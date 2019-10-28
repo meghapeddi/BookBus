@@ -1,10 +1,14 @@
 package com.lti.entity;
 
+import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
@@ -12,6 +16,8 @@ import javax.persistence.Table;
 public class PassengerDetails {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "passenger_auto_incr")
+	@SequenceGenerator(name = "passenger_auto_incr", sequenceName = "passenger_auto_incr", allocationSize = 1)
 	@Column(name = "passengerid")
 	private int passengerId;
 	@Column(name = "passengername")
@@ -24,7 +30,28 @@ public class PassengerDetails {
 	private int age;
 	@Column(name = "seatno")
 	private int seatNo;
+	@Column(name = "gender")
+	private String gender;
 	
+	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public Booking getBooking() {
+		return booking;
+	}
+	public void setBooking(Booking booking) {
+		this.booking = booking;
+	}
 	@ManyToOne
 	@JoinColumn(name = "userid")
 	private User user;

@@ -141,7 +141,7 @@
     font-weight: 600;
     margin: 8px;
     font-size: 20px;
-    width: 20%;
+    width: 12%;
     float: left;
 }
 
@@ -158,28 +158,32 @@
 }
 
 .time{
-    width: 18%;
+    width: 12%;
     float: left;
-    margin: 15px 2px;
+    margin: 4px 2px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .sourcestops{
-    width: 20%;
-    margin: 20px 2px;
+    width: 16%;
+    margin: 14px 2px;
     float: left;
 }
 .deststops{
-    width: 20%;
-    margin: 20px 2px;
+    width: 16%;
+    margin: 14px 2px;
+    float: left;
+}
+
+.avail_stops{
+    width: 16%;
+    margin: 14px 2px;
     float: left;
 }
 #busname{
     padding: 2px;
 }
-
-
 
 .seatbtn {
     width: 10%;
@@ -214,7 +218,6 @@
 	background-color: transparent;
 	border-color: #FFFFFF;
 }
-
 
 select{
     background-color: transparent;

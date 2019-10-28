@@ -37,7 +37,8 @@
 				<div class="contact">
 					<img onclick="mydashboard()" src="contact.png" style="width: 85%;"
 						alt="CONTACT">
-					<a href="logout.lti" style="color: black">Logout</a>
+					<!-- <a href="logout.lti" style="color: black">Logout</a> -->
+					<a href="<c:url value='/logout.lti' />">Logout</a>
 				</div>
 				
 			</div>
@@ -69,7 +70,7 @@
 				<div class="fields">
 					<label>Date of Journey</label> <input type="date" class="date"
 						name="date" />
-					<fmt:formatDate value="${dateVar}" pattern="dd-mm-yyyy" />
+					<fmt:formatDate value="${dateVar}" pattern="yyyy-mm-dd" />
 				</div>
 				<div class="fields">
 					<button type="submit">Search</button>

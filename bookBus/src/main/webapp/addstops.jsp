@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import = "java.io.*,java.util.*, java.sql.*" %>
+<%@ page import = "javax.servlet.http.*, javax.servlet.*" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -35,8 +39,8 @@
 
 		<div class="contact_icon">
 			<div class="dropdown">
-				<img src="contact.png" style="width: 80%;" alt="CONTACT"> <a
-					href="home.jsp" style="color: black">Logout</a>
+				<img src="contact.png" style="width: 80%;" alt="CONTACT">
+				<a href="<c:url value='/adminLogout.lti' />">Logout</a>
 			</div>
 		</div>
 	</div>
@@ -57,18 +61,17 @@
 		<h3>Administrator</h3>
 		<h4>Add Stops</h4>
 
-		<form name="adminForm" action="submit">
+		<form name="adminForm" action="addStops.lti" method="POST">
 
-			<label>City:</label> <select style="width: 23.5%;">
-				<option value="Mumbai">Mumbai</option>
-				<option value="Pune">Pune</option>
-				<option value="Goa">Goa</option>
-				<option value="Bangalore">Bangalore</option>
-			</select> <br> <input type="text" placeholder="Stop Name" name="stops"
+			<label>City:</label> <select style="width: 23.5%;" name = "city">
+				<c:forEach var="cs" items="${cities}">
+					<option value= ${ cs.city }>${cs.city}</option>
+				</c:forEach>
+			</select> <br> <input type="text" placeholder="Stop Name" name="stopName"
 				required> <br>
 
 			<button type="submit">Add Stops</button>
-		</form>
+		</form>	
 	</div>
 
 

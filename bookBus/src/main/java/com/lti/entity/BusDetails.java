@@ -43,14 +43,26 @@ public class BusDetails {
 	@OneToMany(mappedBy="busDetails", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Booking> booking;
 	
-	@OneToMany(mappedBy="busDetails", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	private Set<SeatsAvailable> seatsAvailable;
+	@OneToOne(mappedBy="busDetails", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private SeatsAvailable seatsAvailable;
 	
 	public String getBusNo() {
 		return busNo;
 	}
 	public void setBusNo(String busNo) {
 		this.busNo = busNo;
+	}
+	public Set<Booking> getBooking() {
+		return booking;
+	}
+	public void setBooking(Set<Booking> booking) {
+		this.booking = booking;
+	}
+	public SeatsAvailable getSeatsAvailable() {
+		return seatsAvailable;
+	}
+	public void setSeatsAvailable(SeatsAvailable seatsAvailable) {
+		this.seatsAvailable = seatsAvailable;
 	}
 	public String getBusName() {
 		return busName;

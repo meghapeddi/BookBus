@@ -12,13 +12,15 @@ import com.lti.entity.BusDetails;
 import com.lti.entity.SeatsAvailable;
 import com.lti.entity.Stops;
 
+import net.bytebuddy.asm.Advice.Local;
+
 @Service
 public class SearchService {
 
 	@Autowired
 	SearchDao searchDao;
 	
-	public List<BusDetails> search(String src, String destination,String date) throws Exception{
+	public List<BusDetails> search(String src, String destination,LocalDate date) throws Exception{
 		List<BusDetails> list=searchDao.getBusDetails(src, destination, date);
 		return list;
 	}
@@ -32,10 +34,10 @@ public class SearchService {
 		List<Stops> stops = searchDao.getDroppingStops(destination);
 		return stops;	
 	}
-//	public List<SeatsAvailable> searchAvailableSeats(String date) throws Exception{
-//		List<SeatsAvailable> seats = searchDao.getAvailableSeats(date);
-//		return seats;
-//	}
-	
+	/*public List<SeatsAvailable> searchAvailableSeats(String date) throws Exception{
+		List<SeatsAvailable> seats = searchDao.getAvailableSeats(date);
+		return seats;
+	}
+	*/
 	//public List<BusDetails> fetchStops
 }
