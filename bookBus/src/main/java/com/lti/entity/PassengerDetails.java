@@ -18,7 +18,7 @@ public class PassengerDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "passenger_auto_incr")
 	@SequenceGenerator(name = "passenger_auto_incr", sequenceName = "passenger_auto_incr", allocationSize = 1)
-	@Column(name = "passengerid")
+	@Column(name = "PASSENGERID")
 	private int passengerId;
 	@Column(name = "passengername")
 	private String passengerName;

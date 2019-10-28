@@ -54,23 +54,23 @@
 					<label>From</label>
 					
 					 <select class="box" name="src">
-						<c:forEach var="cities" items="${city}">
-						<option value=${ cities.city }>${ cities.city }</option>
+						<c:forEach var="cs" items="${cities}">
+						<option value=${cs.city}>${cs.city}</option>
 						</c:forEach>
 					</select>
 				</div>
 				<div class="fields">
 					<label>To</label> 
 					<select class="box" name="destination">
-						<c:forEach var="cities" items="${city}">
-						<option value=${ cities.city }>${ cities.city }</option>
+						<c:forEach var="cs" items="${cities}">
+						<option value=${cs.city}>${cs.city}</option>
 						</c:forEach>
 					</select>
 				</div>
 				<div class="fields">
 					<label>Date of Journey</label> <input type="date" class="date"
 						name="date" />
-					<fmt:formatDate value="${dateVar}" pattern="yyyy-mm-dd" />
+					<%-- <fmt:formatDate value="${dateVar}" pattern="yyyy-mm-dd" /> --%>
 				</div>
 				<div class="fields">
 					<button type="submit">Search</button>

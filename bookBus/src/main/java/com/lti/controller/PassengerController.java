@@ -23,7 +23,7 @@ public class PassengerController {
 	public String fetchPassenger(HttpServletRequest request, PassengerDTO data, Map model) throws Exception {
 		int noOfSeats = (Integer)request.getSession().getAttribute("noOfSeats");
 		System.out.println(noOfSeats);
-		count=(Integer)request.getSession().getAttribute("count");
+		//count=(Integer)request.getSession().getAttribute("count");
 		System.out.println("count"+count);
 		PassengerDTO passenger = new PassengerDTO();
 		passenger.setPassengerName(data.getPassengerName());

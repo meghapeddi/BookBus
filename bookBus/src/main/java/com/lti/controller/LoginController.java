@@ -19,7 +19,7 @@ import com.lti.entity.User;
 import com.lti.service.LoginService;
 
 @Controller
-@SessionAttributes({"user","city"})
+@SessionAttributes({"user","cities"})
 public class LoginController {
 	
 	@Autowired
@@ -30,7 +30,7 @@ public class LoginController {
 	public String verify(@RequestParam("email") String email,@RequestParam("password") String password,Map model){
 		User user = loginService.verify(email,password);
 		List<City>cities = loginService.fetchCity();
-		model.put("city",cities);
+		model.put("cities",cities);
 		if (email.equals(user.getEmail()) && password.equals(user.getPassword())) {
 			model.put("user", user);
 //			model.put("city",cities);

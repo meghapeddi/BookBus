@@ -8,7 +8,15 @@ public class BusDTO {
 	private String destination;
 	private String departureTime;
 	private String arrivalTime;
-	private String slotNo;
+	public String getTravelTime() {
+		return travelTime;
+	}
+
+	public void setTravelTime(String travelTime) {
+		this.travelTime = travelTime;
+	}
+
+	private String travelTime;
 	private String type;
 	private int fare;
 
@@ -44,13 +52,6 @@ public class BusDTO {
 		this.destination = destination;
 	}
 
-	public String getSlotNo() {
-		return slotNo;
-	}
-
-	public void setSlotNo(String slotNo) {
-		this.slotNo = slotNo;
-	}
 
 	public String getType() {
 		return type;

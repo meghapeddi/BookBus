@@ -14,7 +14,7 @@ public class BusService implements BusInterface{
 	@Autowired
 	private BusDao busDao;
 
-	public void addBuses(BusDetails bus) {
+	public void addBuses(BusDetails bus) throws Exception {
 		// TODO Auto-generated method stub
 		busDao.save(bus);
 		

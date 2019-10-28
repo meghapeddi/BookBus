@@ -30,7 +30,7 @@ public class BookingDao  {
 	}
 	
 	public SeatsAvailable getAvailableSeats(String busNo, LocalDate date) throws Exception{
-		String sql = "select s from SeatsAvailable s where s.busNo=:number and s.dailyDate=:date";
+		String sql = "select s from SeatsAvailable s join fetch s.busDetails b where b.busNo=:number and s.dailyDate=:date";
 		Query query=entityManager.createQuery(sql);
 		query.setParameter("number", busNo);
 		query.setParameter("date", date);

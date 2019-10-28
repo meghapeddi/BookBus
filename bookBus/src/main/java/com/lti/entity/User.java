@@ -32,11 +32,11 @@ public class User {
 	private String contactno;
 	@Column(name = "gender")
 	private String gender;
-	
-	@OneToMany(mappedBy="user", fetch=FetchType.LAZY)
+
+	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
 	private Set<PassengerDetails> passengerDetails;
-	
-	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
+
+	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
 	private Set<Booking> booking;
 
 	public String getContactno() {
@@ -53,17 +53,6 @@ public class User {
 
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
-
-	@Column(name = "type")
-	private String type;
-
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
 	}
 
 	public int getUserId() {

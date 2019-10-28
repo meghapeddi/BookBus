@@ -4,5 +4,5 @@ import com.lti.entity.BusDetails;
 
 public interface BusInterface {
  
-	public void addBuses(BusDetails bus); 
+	public void addBuses(BusDetails bus) throws Exception; 
 }

@@ -85,7 +85,7 @@
 			<c:forEach var="buses" items="${bus}"> 
 	 		<div class="bus_detail"> 
 	 			<div class="bus_card"> 
-	 				<span id=	"busname">${buses.busName}</span><br> 
+	 				<span id="busname">${buses.busName}</span><br> 
 	 				<p id="type">${buses.type}</p> 
 	 			</div> 
 

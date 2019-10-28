@@ -44,7 +44,7 @@ public class SearchController {
 		model.put("bus", bus);
 		model.put("src", src);
 		model.put("destination",destination);
-		model.put("date",dateOfJourney);
+		model.put("date",dateSelected);
 		model.put("srcList", srcList);
 		model.put("destList", destinationList);
 		//model.put("seats", availableSeats);

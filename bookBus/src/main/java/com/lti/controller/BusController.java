@@ -22,7 +22,7 @@ public class BusController {
 	private BusInterface busInterface;
 
 	@RequestMapping(path = "/addbuses.lti", method = RequestMethod.POST)
-	public String register(BusDTO data, Map model) {
+	public String register(BusDTO data, Map model) throws Exception{
 		BusDetails bus = new BusDetails();
 		bus.setBusNo(data.getBusNo());
 		bus.setBusName(data.getBusName());
@@ -30,6 +30,7 @@ public class BusController {
 		bus.setDestination(data.getDestination());
 		bus.setDepartureTime(data.getDepartureTime());
 		bus.setArrivalTime(data.getArrivalTime());
+		bus.setTravelTime(data.getTravelTime());
 		bus.setType(data.getType());
 		bus.setFare(data.getFare());
 		
