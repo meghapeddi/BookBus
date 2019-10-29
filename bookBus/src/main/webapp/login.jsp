@@ -17,9 +17,15 @@
 
 			<input type="email" name="email" placeholder="Email" required /> <input
 				id="password" name="password" type="password" placeholder="Password" required />
-				
+				<div>
 				<div class="forgot">
-				<a href="forgotpassword.jsp">Forgot Password</a>
+				<a href="forgotpassword.jsp">Forgot Password?</a>
+				</div>
+				<br>
+				<div class="forgot">
+				<a href="adminLogin.jsp">Admin Login</a>
+				</div>
+				
 				</div>
 			<div style="width: 97%; margin-top: 26px; height: inherit;">
 				<div style="width: 50%; float: left;">

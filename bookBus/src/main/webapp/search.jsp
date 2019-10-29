@@ -18,8 +18,8 @@
 			<img src="logo.png" style="width: inherit;" alt="LOGO">
 		</div>
 		<div class="contact_icon">
-			<img src="contact.png" style="width: 80%;" alt="CONTACT"> <a
-				href="home.html" style="color: black">Logout</a>
+			<img src="contact.png" style="width: 80%;" alt="CONTACT"> 
+			<a href="<c:url value='/logout.lti' />">Logout</a>
 		</div>
 		<div class="heading">
 			<h1>bookBUS</h1>

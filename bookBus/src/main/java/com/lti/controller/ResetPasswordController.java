@@ -27,7 +27,7 @@ public class ResetPasswordController {
 			resetPasswordService.changePassword(email, newPassword);
 			return "login.jsp";
 		} else {
-			
+			model.put("fail", "Password do not match");
 			return "resetpassword.jsp";
 		}
 	}

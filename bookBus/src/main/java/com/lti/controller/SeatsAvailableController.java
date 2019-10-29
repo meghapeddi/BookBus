@@ -22,10 +22,17 @@ public class SeatsAvailableController {
 	public String getBusNo(SearchDTO data, Map model) throws Exception {
 		SearchDTO search=new SearchDTO();
 		search.setBusNo(data.getBusNo());
-		search.setBoardingPoint(data.getBoardingPoint());
-		search.setDropPoint(data.getDropPoint());
+	
+		
+		String boardingPoint = data.getBoardingPoint();
+		String dropPoint = data.getDropPoint();
+		
+		search.setBoardingPoint(boardingPoint);
+		search.setDropPoint(dropPoint);
 		
 		model.put("searchData", search);
+//		model.put("boardingPoint", boardingPoint);
+//		model.put("dropPoint", dropPoint);
 		return "noOfSeats.jsp";
 	}
 	

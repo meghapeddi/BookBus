@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Booking successful</h1>
+<h1> successful</h1>
 </body>
 </html>

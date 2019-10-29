@@ -37,7 +37,7 @@ public class RegisterController {
 
 		if (flag == 1) {
 			model.put("message", "registered");
-			//sendMailService.send(data.getEmail());
+			sendMailService.send(data.getEmail());
 			return "login.jsp";
 		} else {
 			return "register.jsp";

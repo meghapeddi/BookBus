@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.lti.dto.PassengerDTO;
 
 @Controller
-@SessionAttributes({"noOfSeats","passengerList","count"})
+@SessionAttributes({"noOfSeats","passengerList","count","cities"})
 public class PassengerController {
 
 	int count=1;
@@ -22,24 +22,19 @@ public class PassengerController {
 	@RequestMapping(path = "/passengers.lti", method=RequestMethod.POST)
 	public String fetchPassenger(HttpServletRequest request, PassengerDTO data, Map model) throws Exception {
 		int noOfSeats = (Integer)request.getSession().getAttribute("noOfSeats");
-		System.out.println(noOfSeats);
-		//count=(Integer)request.getSession().getAttribute("count");
-		System.out.println("count"+count);
+		
 		PassengerDTO passenger = new PassengerDTO();
 		passenger.setPassengerName(data.getPassengerName());
 		passenger.setAge(data.getAge());
 		passenger.setSeatNo(data.getSeatNo());
 		passenger.setGender(data.getGender());
+		
 		//int noOfSeats = Integer.parseInt(seats);
 		if(count<noOfSeats) {
 			//passengerList=(List<PassengerDTO>)model.get("passengerList");
 			passengerList.add(passenger);
 			count++;
 			model.put("count", count);
-//			for(PassengerDTO list:passengerList)
-//			{
-//				System.out.println(list.getPassengerName());
-//			}
 			return "passengers.jsp";
 			
 		}else {

@@ -48,7 +48,7 @@ public class SearchController {
 		model.put("srcList", srcList);
 		model.put("destList", destinationList);
 		//model.put("seats", availableSeats);
-		return "search1.jsp";
+		return "search.jsp";
 	}
 	
 	

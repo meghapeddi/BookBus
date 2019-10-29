@@ -37,9 +37,7 @@
                </div>
                </div>
 
-        <div class="username">
-            <h2>Hello Username</h2>
-        </div>
+       
 
 	    <div id="searchForm">
         <form action="login.jsp" method="post" style="padding: 37px;">
